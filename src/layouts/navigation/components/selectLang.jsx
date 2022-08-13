@@ -1,17 +1,14 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import MenuItem from "@mui/material/MenuItem";
-import { useToggle } from "../../../hooks";
-import { Menu, Stack, styled, Typography, useTheme } from "@mui/material";
-import { ExpandLess, ExpandMore } from "@mui/icons-material";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { styled, Typography } from "@mui/material";
 
 const WIDTH = "55px";
 
 const FlexBox = styled(motion.div)(({ theme }) => ({
   // border: "dotted",
   display: "flex",
-  alignContent: "space-evenly",
+  // alignContent: "space-evenly",
+  // alignItems: 'center'
 }));
 const Item = styled(motion.div)(({ theme }) => ({
   color: theme.palette.primary.main,
