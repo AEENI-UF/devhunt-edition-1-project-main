@@ -1,10 +1,19 @@
-import { Box, Button, Grid, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid,
+  styled,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import LangSelect from "./components/selectLang";
 import { motion, useViewportScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 import NavDrawer from "./drawer";
 import { SwicthComponent } from "./components";
+import Aeeni from "../../assets/logo/logo.png";
+import { Home } from "@mui/icons-material";
 
 const navStyles = {
   display: "flex",
@@ -15,9 +24,43 @@ const navStyles = {
   width: "100vw",
   left: "0",
   zIndex: 99,
+  // border: "dotted",
 };
 
-const SECTIONS = ["Services", "Projects", "Contact"];
+const GridFlex = styled(Grid)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+}));
+
+const SECTIONS = [
+  {
+    key: "Home",
+    icon: <Home />,
+  },
+  {
+    key: "Clubs",
+    icon: <Home />,
+  },
+  {
+    key: "Events",
+    icon: <Home />,
+  },
+  {
+    key: "Parteners",
+    icon: <Home />,
+  },
+  {
+    key: "Organism",
+    icon: <Home />,
+  },
+];
+
+const Logo = () => (
+  <Box>
+    <img src={Aeeni} alt="" style={{ width: 90, height: 40 }} />
+  </Box>
+);
+
 export function Navigation() {
   const { scrollY } = useViewportScroll();
   const theme = useTheme();
@@ -52,19 +95,18 @@ export function Navigation() {
       sx={{
         ...navStyles,
         height: { xs: "4rem", md: "6rem" },
-        px: { sx: 0, lg: "3rem" },
+        px: { xs: "1rem", lg: "3rem" },
+        backgroundColor: "white",
       }}
     >
-      <Grid container sx={{}}>
+      <Grid container>
         <Grid
           item
           xs={10}
           md={3}
-          sx={{ display: "flex", alignItems: "center", border: "dotted" }}
+          sx={{ display: "flex", alignItems: "center" /*  border: "dotted" */ }}
         >
-          <Typography sx={{ color: theme.palette.primary.main }}>
-            Logo
-          </Typography>
+          <Logo />
         </Grid>
         <Grid
           container
@@ -72,12 +114,17 @@ export function Navigation() {
           md={6}
           sx={{
             display: { xs: "none", md: "flex" },
-            border: "dotted",
+            // border: "dotted",
             justifyContent: "center",
           }}
         >
           {SECTIONS.map((section) => (
-            <Grid item key={section} md={2} textAlign="center">
+            <Grid
+              item
+              key={section.key}
+              md={2}
+              sx={{ display: "flex", alignItems: "center" }}
+            >
               <motion.div
                 whileHover={{
                   textShadow: "0 0 4px rgb(5, 255, 251)",
@@ -93,14 +140,11 @@ export function Navigation() {
                 }}
               >
                 <Typography sx={{ color: theme.palette.primary.main }}>
-                  {section}
+                  {section.key}
                 </Typography>
               </motion.div>
             </Grid>
           ))}
-          <Grid item>
-            <LangSelect />
-          </Grid>
         </Grid>
 
         <Grid
@@ -109,21 +153,24 @@ export function Navigation() {
           md={3}
           sx={{
             display: { xs: "none", md: "flex" },
-            border: "dotted",
-            justifyContent: "flex-end",
+            // border: "dotted",
+            justifyContent: "space-between",
           }}
         >
-          <Grid item>
+          <GridFlex>
+            <LangSelect />
+          </GridFlex>
+          <GridFlex item>
             <SwicthComponent />
-          </Grid>
+          </GridFlex>
 
-          <Grid item sx={{ ml: 5 }}>
+          <GridFlex item>
             <Button>Contact us</Button>
-          </Grid>
+          </GridFlex>
         </Grid>
 
         <Grid item xs={2} sx={{ display: { xs: "flex", md: "none" } }}>
-          <NavDrawer />
+          <NavDrawer sections={SECTIONS} />
         </Grid>
       </Grid>
     </Box>

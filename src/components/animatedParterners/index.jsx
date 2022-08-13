@@ -1,7 +1,85 @@
 import { Box, Grid, Stack, useMediaQuery, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
-import PartenaireCard from "../parterCard";
+import PartenerCard from "../partenerCard";
+import AkataCover from "../../assets/akata.jpg";
+import AratoCover from "../../assets/arato.jpg";
+import KalibotCover from "../../assets/kalibot.png";
+import MahefaCover from "../../assets/mahefa.png";
+import WecoursCover from "../../assets/wecours.jpg";
+
+const data = [
+  {
+    partener: "name",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: AkataCover,
+    logo: "",
+  },
+  {
+    partener: "name",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: AratoCover,
+    logo: "",
+  },
+  {
+    partener: "name",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: KalibotCover,
+    logo: "",
+  },
+  {
+    partener: "name",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: MahefaCover,
+    logo: "",
+  },
+  {
+    partener: "name",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: WecoursCover,
+    logo: "",
+  },
+  {
+    partener: "name",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: AkataCover,
+    logo: "",
+  },
+  {
+    partener: "name",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: KalibotCover,
+    logo: "",
+  },
+  {
+    partener: "name",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: MahefaCover,
+    logo: "",
+  },
+  {
+    partener: "name",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: AratoCover,
+    logo: "",
+  },
+  {
+    partener: "name",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: KalibotCover,
+    logo: "",
+  },
+];
 
 const duration = 200;
 const lg = 3;
@@ -48,111 +126,86 @@ export default function AnimatedPartenersCard() {
           sx={{
             width: "100vw",
             height: "200vh",
-            px: { xs: 0, sm: 5, md: 15, lg: 15 },
             overflow: "hidden",
             position: "absolute",
+            border: "dotted",
+            display: "flex",
+            justifyContent: "center",
           }}
         >
-          <Grid
-            item
-            xs={6}
-            sm={4}
-            lg={lg}
-            justifyContent="center"
-            display="flex"
+          <Stack
+            component={motion.div}
+            spacing={2}
+            animate={{
+              y: [0, -1500, 0],
+              transition: {
+                repeat: Infinity,
+                duration,
+                type: "just",
+              },
+            }}
+            sx={{ mr: { sm: 2, lg: 2 }, ml: { xs: 1, sm: 0 } }}
           >
-            <Stack
-              component={motion.div}
-              spacing={2}
-              animate={{
-                rotateX: 30,
-                y: [0, -1500, 0],
-                transition: {
-                  repeat: Infinity,
-                  duration,
-                  type: "just",
-                },
-              }}
-            >
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((item) => (
-                <PartenaireCard key={item} />
-              ))}
-            </Stack>
-          </Grid>
-          <Grid
-            item
-            xs={6}
-            sm={4}
-            lg={lg}
-            justifyContent="center"
-            display="flex"
+            {data.map((item) => (
+              <PartenerCard key={item.name} item={item} />
+            ))}
+          </Stack>
+          <Stack
+            component={motion.div}
+            spacing={2}
+            initial={{ y: 0 }}
+            animate={{
+              y: keyframes,
+              transition: {
+                repeat: Infinity,
+                duration,
+                type: "just",
+              },
+            }}
+            sx={{
+              mr: { md: 2, lg: 2 },
+              display: { xs: "none", sm: "flex" },
+            }}
           >
-            <Stack
-              component={motion.div}
-              spacing={2}
-              initial={{ y: 0 }}
-              animate={{
-                y: keyframes,
-                transition: {
-                  repeat: Infinity,
-                  duration,
-                  type: "just",
-                },
-              }}
-            >
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((item) => (
-                <PartenaireCard key={item} />
-              ))}
-            </Stack>
-          </Grid>
-          <Grid
-            item
-            sm={4}
-            lg={lg}
-            justifyContent="center"
-            display={{ xs: "none", sm: "flex" }}
+            {data.map((item) => (
+              <PartenerCard key={item.name} item={item} />
+            ))}
+          </Stack>
+          <Stack
+            component={motion.div}
+            spacing={2}
+            animate={{
+              y: [0, -1500, 0],
+              transition: {
+                repeat: Infinity,
+                duration,
+                type: "just",
+              },
+            }}
+            sx={{ mr: { sm: 2, lg: 2 }, display: { xs: "none", md: "flex" } }}
           >
-            <Stack
-              component={motion.div}
-              spacing={2}
-              animate={{
-                y: [0, -1500, 0],
-                transition: {
-                  repeat: Infinity,
-                  duration,
-                  type: "just",
-                },
-              }}
-            >
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((item) => (
-                <PartenaireCard key={item} />
-              ))}
-            </Stack>
-          </Grid>
-          <Grid
-            item
-            lg={lg}
-            justifyContent="center"
-            display={{ xs: "none", md: "flex" }}
+            {data.map((item) => (
+              <PartenerCard key={item.name} item={item} />
+            ))}
+          </Stack>
+          <Stack
+            component={motion.div}
+            spacing={2}
+            initial={{ y: 0 }}
+            animate={{
+              y: keyframes,
+              transition: {
+                repeat: Infinity,
+                duration,
+                type: "just",
+              },
+            }}
+            sx={{ mr: { lg: 2 }, display: { xs: "none", lg: "flex" } }}
           >
-            <Stack
-              component={motion.div}
-              spacing={2}
-              initial={{ y: 0 }}
-              animate={{
-                y: keyframes,
-                transition: {
-                  repeat: Infinity,
-                  duration,
-                  type: "just",
-                },
-              }}
-            >
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((item) => (
-                <PartenaireCard key={item} />
-              ))}
-            </Stack>
-          </Grid>
+            {data.map((item) => (
+              <PartenerCard key={item.name} item={item} />
+            ))}
+          </Stack>
         </Grid>
       </Box>
     </Box>
