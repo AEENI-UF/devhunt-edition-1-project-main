@@ -1,4 +1,4 @@
-import { Grid, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Button, Grid, useMediaQuery, useTheme } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import LangSelect from "./components/selectLang";
 import { motion, useViewportScroll } from "framer-motion";
@@ -12,16 +12,15 @@ const navStyles = {
   alignItems: "center",
   justifyContent: "space-between",
   height: "6rem",
-  width: "98vw",
+  width: "100vw",
   left: "0",
-  zIndex: 9,
+  zIndex: 99,
 };
 
 const SECTIONS = ["Services", "Projects", "Contact"];
 export function Navigation() {
-  const theme = useTheme();
   const { scrollY } = useViewportScroll();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const theme = useTheme();
 
   const [hidden, setHidden] = useState(false);
 
@@ -45,18 +44,23 @@ export function Navigation() {
   });
 
   return (
-    <motion.div
+    <Box
+      component={motion.div}
       variants={variants}
       animate={hidden ? "hidden" : "visible"}
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
-      style={{ ...navStyles, height: isMobile ? "4rem" : "6rem" }}
+      sx={{
+        ...navStyles,
+        height: { xs: "4rem", md: "6rem" },
+        px: { sx: 0, lg: "3rem" },
+      }}
     >
-      <Grid container sx={{ mx: { xs: 1, md: 4 } }}>
+      <Grid container sx={{}}>
         <Grid
           item
           xs={10}
-          md={6}
-          sx={{ display: "flex", alignItems: "center" }}
+          md={3}
+          sx={{ display: "flex", alignItems: "center", border: "dotted" }}
         >
           <Typography sx={{ color: theme.palette.primary.main }}>
             Logo
@@ -66,14 +70,12 @@ export function Navigation() {
           container
           item
           md={6}
-          sx={{ display: { xs: "none", md: "flex" } }}
+          sx={{
+            display: { xs: "none", md: "flex" },
+            border: "dotted",
+            justifyContent: "center",
+          }}
         >
-          <Grid item lg={3}>
-            <LangSelect />
-          </Grid>
-          <Grid item lg={2}>
-            <SwicthComponent />
-          </Grid>
           {SECTIONS.map((section) => (
             <Grid item key={section} md={2} textAlign="center">
               <motion.div
@@ -96,11 +98,34 @@ export function Navigation() {
               </motion.div>
             </Grid>
           ))}
+          <Grid item>
+            <LangSelect />
+          </Grid>
         </Grid>
+
+        <Grid
+          container
+          item
+          md={3}
+          sx={{
+            display: { xs: "none", md: "flex" },
+            border: "dotted",
+            justifyContent: "flex-end",
+          }}
+        >
+          <Grid item>
+            <SwicthComponent />
+          </Grid>
+
+          <Grid item sx={{ ml: 5 }}>
+            <Button>Contact us</Button>
+          </Grid>
+        </Grid>
+
         <Grid item xs={2} sx={{ display: { xs: "flex", md: "none" } }}>
           <NavDrawer />
         </Grid>
       </Grid>
-    </motion.div>
+    </Box>
   );
 }
