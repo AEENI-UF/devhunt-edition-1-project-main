@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Grid,
-  styled,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Box, Button, Grid, styled, useTheme } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import LangSelect from "./components/selectLang";
 import { motion, useViewportScroll } from "framer-motion";
@@ -13,6 +6,7 @@ import { useEffect, useState } from "react";
 import NavDrawer from "./drawer";
 import { SwicthComponent } from "./components";
 import Aeeni from "../../assets/logo/logo.png";
+import AeeniDark from "../../assets/logo/aeeni-light.png";
 import { Home } from "@mui/icons-material";
 
 const navStyles = {
@@ -20,7 +14,7 @@ const navStyles = {
   position: "fixed",
   alignItems: "center",
   justifyContent: "space-between",
-  height: "6rem",
+  height: "4rem",
   width: "100vw",
   left: "0",
   zIndex: 99,
@@ -55,11 +49,18 @@ const SECTIONS = [
   },
 ];
 
-const Logo = () => (
-  <Box>
-    <img src={Aeeni} alt="" style={{ width: 90, height: 40 }} />
-  </Box>
-);
+const Logo = () => {
+  const theme = useTheme();
+  return (
+    <Box>
+      {theme.palette.mode === "light" ? (
+        <img src={AeeniDark} alt="" style={{ width: 90, height: 40 }} />
+      ) : (
+        <img src={Aeeni} alt="" style={{ width: 90, height: 40 }} />
+      )}
+    </Box>
+  );
+};
 
 export function Navigation() {
   const { scrollY } = useViewportScroll();
@@ -94,9 +95,10 @@ export function Navigation() {
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
       sx={{
         ...navStyles,
-        height: { xs: "4rem", md: "6rem" },
+        height: { xs: "4rem", md: "4rem" },
         px: { xs: "1rem", lg: "3rem" },
-        backgroundColor: "white",
+        backgroundColor:
+          theme.palette.mode === "light" ? "primary.main" : "white",
       }}
     >
       <Grid container>
@@ -126,9 +128,11 @@ export function Navigation() {
               sx={{ display: "flex", alignItems: "center" }}
             >
               <motion.div
-                whileHover={{
-                  textShadow: "0 0 4px rgb(5, 255, 251)",
-                }}
+                whileHover={
+                  {
+                    // textShadow: "0 0 4px rgb(5, 255, 251)",
+                  }
+                }
                 whileTap={{
                   scale: 2.5,
                   opacity: 0,
@@ -139,7 +143,14 @@ export function Navigation() {
                   },
                 }}
               >
-                <Typography sx={{ color: theme.palette.primary.main }}>
+                <Typography
+                  sx={{
+                    color:
+                      theme.palette.mode === "light"
+                        ? "white"
+                        : theme.palette.primary.main,
+                  }}
+                >
                   {section.key}
                 </Typography>
               </motion.div>
@@ -165,7 +176,9 @@ export function Navigation() {
           </GridFlex>
 
           <GridFlex item>
-            <Button>Contact us</Button>
+            <Button variant="contained" color="secondary">
+              Contact us
+            </Button>
           </GridFlex>
         </Grid>
 

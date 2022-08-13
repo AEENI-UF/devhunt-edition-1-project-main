@@ -29,7 +29,7 @@ export default function OrganismSection() {
           direction="column"
           sx={{
             zIndex: 2,
-            border: "dotted",
+            // border: "dotted",
             position: "absolute",
             top: containerWidth - 200,
           }}
@@ -46,7 +46,7 @@ export default function OrganismSection() {
             position: { xs: "relative", md: "absolute" },
             bottom: { xs: "0", md: "-15rem" },
             zIndex: 2,
-            border: "dotted",
+            // border: "dotted",
           }}
           justifyContent="center"
         >
@@ -62,7 +62,7 @@ export default function OrganismSection() {
           bottom: 0,
           width: "100%",
           height: 150,
-          backgroundImage: "linear-gradient(#fff0, white)",
+          backgroundImage: `linear-gradient(#fff0, ${theme.palette.background.default})`,
         }}
       ></Box>
     </Box>

@@ -2,7 +2,7 @@ import { createTheme } from "@mui/material";
 import React from "react";
 
 // #FA03B5
-const themeOptions = {
+/* const themeOptions = {
   palette: {
     type: "light",
     primary: {
@@ -50,16 +50,32 @@ const themeOptions = {
       arrow: true,
     },
   },
-};
-
+}; */
+// 6c584c
 export const darkTheme = {
   palette: {
     mode: "dark",
+    background: {
+      default: "#400000",
+      paper: "#a66700",
+    },
+    primary: {
+      main: "#980f5a",
+    },
+    secondary: {
+      main: "#750550",
+    },
   },
 };
 export const lightTheme = {
   palette: {
     mode: "light",
+    primary: {
+      main: "#5d1924",
+    },
+    secondary: {
+      main: "#b31b10",
+    },
   },
 };
 

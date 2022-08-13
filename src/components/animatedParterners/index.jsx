@@ -100,7 +100,7 @@ export default function AnimatedPartenersCard() {
           width: "100vw",
           height: "30vh",
           zIndex: 2,
-          backgroundImage: "linear-gradient(#fff,#fff 40%,rgba(255,255,255,0))",
+          backgroundImage: `linear-gradient(${theme.palette.background.default},${theme.palette.background.default} 40%,rgba(255,255,255,0))`,
         }}
       ></Box>
       <Box
@@ -117,7 +117,7 @@ export default function AnimatedPartenersCard() {
             top: "80vh",
             width: "100vw",
             height: "30vh",
-            backgroundImage: "linear-gradient(rgba(255,255,255,0),#fff)",
+            backgroundImage: `linear-gradient(rgba(255,255,255,0),${theme.palette.background.default})`,
             zIndex: 2,
           }}
         ></Box>

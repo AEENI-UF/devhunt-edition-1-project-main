@@ -46,13 +46,14 @@ export default function PartenerCard({ item }) {
           alt="green iguana"
           className={classes.Media}
         />
-        <Avatar className={classes.Avatar} alt="image" src={Bg1} />
+        <Avatar
+          sx={{ borderColor: "background.paper" }}
+          className={classes.Avatar}
+          alt="image"
+          src={Bg1}
+        />
         <CardContent sx={{ marginTop: "-34px", padding: "32px" }}>
-          {
-            <Typography variant="h6" color="black">
-              {item.partener}
-            </Typography>
-          }
+          {<Typography variant="h6">{item.partener}</Typography>}
           <Typography variant="subtitle2">{item.description}</Typography>
         </CardContent>
       </CardActionArea>
