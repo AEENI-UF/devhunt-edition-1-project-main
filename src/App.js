@@ -4,6 +4,17 @@ import "./App.css";
 import React from "react";
 import { ColorModeContext, darkTheme, lightTheme } from "./config/theme";
 
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+
+import resources from "./lang";
+
+i18n.use(initReactI18next).init({
+  resources,
+  lng: "en",
+  fallbackLng: "en",
+});
+
 function App() {
   const [isDark, setDark] = React.useState(false);
   const colorMode = React.useMemo(
