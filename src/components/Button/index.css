@@ -1,0 +1,49 @@
+.btn_holder {
+	transform: translate(-50%, -50%);
+	position: relative;
+	border-radius: 13px;
+	height: 60px;
+	width: 200px;
+	
+}
+
+.kp_btn {
+	position: relative;
+	display: block;
+	height: 60px;
+	width: 200px;
+    border-radius: 13px;
+	overflow: hidden;
+}
+.kp_btn:before,
+.kp_btn:after{
+	position: absolute;
+	content: "Get started";
+	top: 0;
+	left: 0;
+	height: auto;
+	width: 100%;
+	text-align: center;
+	line-height: 60px;
+	font-size: 1.5em;
+	color: white;
+	transition: all .4s ease;
+	text-transform: capitalize;
+}
+.kp_btn:after {
+	content: "Get started";
+	top: 100%;
+	opacity: 0;
+	visibility: hidden;
+}
+.kp_btn:hover:before {
+	top: -100%;
+	opacity: 0;
+	visibility: hidden;
+}
+.kp_btn:hover:after {
+	top: 0;
+	opacity: 1;
+	visibility: visible;
+}
+

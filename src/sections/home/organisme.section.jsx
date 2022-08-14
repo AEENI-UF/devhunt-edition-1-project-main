@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 import PROFILE_PRESIDENT from "../../assets/images/profile-president.jpg";
 
@@ -16,7 +17,7 @@ export function OrganismSection() {
   const { t } = useTranslation();
   const theme = useTheme();
 
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
 
   const MEMBERS = [
     {
@@ -46,6 +47,16 @@ export function OrganismSection() {
     },
   ];
 
+  const variants = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+  };
+
   return (
     <Box
       sx={{
@@ -57,7 +68,7 @@ export function OrganismSection() {
           variant="h2"
           sx={{
             textAlign: "center",
-            mb: 5,
+            mb: 10,
             color: theme.palette.mode === "dark" ? "#fff" : "#000",
           }}
         >
@@ -70,17 +81,40 @@ export function OrganismSection() {
               container
               justifyContent="center"
               sx={{
-                gap: 1,
+                gap: 15,
               }}
             >
               {MEMBERS.map((member, i) => {
                 return (
                   <Grid
+                    component={motion.div}
+                    variants={variants}
+                    initial={{
+                      opacity: 0,
+                      y: 100,
+                      scale: 0.9,
+                    }}
+                    whileInView={{
+                      y: 0,
+                      opacity: 1,
+                      scale: 1,
+                      once: true,
+                    }}
+                    viewport={{
+                      once: true,
+                    }}
+                    transition={{
+                      duration: 0.7,
+                    }}
                     item
                     xs={12}
-                    sm={5}
+                    md={5}
                     sx={{
-                      border: "1px solid #ccc",
+                      border: "1px solid",
+                      borderColor:
+                        theme.palette.mode === "dark"
+                          ? "#fff"
+                          : "secondary.main",
                       borderRadius: "1rem",
                       backgroundColor:
                         theme.palette.mode === "dark"
@@ -88,6 +122,10 @@ export function OrganismSection() {
                           : "secondary.main",
                       color: theme.palette.mode === "dark" ? "#000" : "#fff",
                       p: 3,
+                      mx: {
+                        xs: 0,
+                        sm: "6rem",
+                      },
                     }}
                   >
                     <Stack
@@ -96,6 +134,7 @@ export function OrganismSection() {
                       justifyContent="center"
                       sx={{
                         height: "100%",
+                        position: "relative",
                       }}
                     >
                       <Box
@@ -104,14 +143,37 @@ export function OrganismSection() {
                         sx={{
                           width: "7rem",
                           height: "7rem",
-                          border: "3px solid #fff",
+                          border: "3px solid",
+                          borderColor:
+                            theme.palette.mode === "dark"
+                              ? "background.default"
+                              : "#fff",
                           borderRadius: "50%",
+                          top: "-52%",
                           objectFit: "cover",
                           mb: 3,
+                          transform: "translateY(-25%)",
+                          position: "absolute",
                         }}
                       ></Box>
-                      <Typography variant="h4">{member.name}</Typography>
-                      <Typography variant="p">{member.post}</Typography>
+                      <Typography
+                        variant="h4"
+                        sx={{
+                          fontSize: "1.5rem",
+                          marginTop: 7,
+                          textAlign: "center",
+                        }}
+                      >
+                        {member.name}
+                      </Typography>
+                      <Typography
+                        variant="p"
+                        sx={{
+                          textAlign: "center",
+                        }}
+                      >
+                        {member.post}
+                      </Typography>
                     </Stack>
                   </Grid>
                 );
@@ -173,7 +235,8 @@ function MemberCard(member) {
         width: "100%",
         minHeight: CUSTOM_HEIGHT,
         m: 1,
-        border: "1px solid #ccc",
+        border: "1px solid",
+        borderColor: theme.palette.mode === "dark" ? "#fff" : "secondary.main",
         borderRadius: "1rem",
         backgroundColor:
           theme.palette.mode === "dark" ? "#fff" : "secondary.main",
@@ -193,10 +256,9 @@ function MemberCard(member) {
           sx={{
             width: "7rem",
             height: "7rem",
-            // border: "3px solid #fff",
             border:
               "3px solid " +
-              (theme.palette.mode === "dark" ? "#a66700" : "#fff"),
+              (theme.palette.mode === "dark" ? "#400000" : "#fff"),
             borderRadius: "50%",
             objectFit: "cover",
             mb: 3,
@@ -206,6 +268,7 @@ function MemberCard(member) {
           variant="h4"
           sx={{
             color: theme.palette.mode === "dark" ? "#000" : "#fff",
+            textAlign: "center",
           }}
         >
           {member.name}
@@ -214,6 +277,7 @@ function MemberCard(member) {
           variant="p"
           sx={{
             color: theme.palette.mode === "dark" ? "#000" : "#fff",
+            textAlign: "center",
           }}
         >
           {member.post}
