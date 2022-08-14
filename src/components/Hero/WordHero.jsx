@@ -7,7 +7,7 @@ export default function WordHero() {
   return (
     <Box sx={{ padding: { xs: "18px", md: "32px" } }}>
       <Typography
-        variant="h2"
+        variant="h3"
         color="text.primary"
         sx={{ fontWeight: "bold", paddingBottom: "23px" }}
       >
