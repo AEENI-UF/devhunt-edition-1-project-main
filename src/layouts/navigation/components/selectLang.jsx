@@ -20,7 +20,10 @@ export default function LangSelect() {
         labelId="select-language"
         id="select-language"
         value={lang}
-        onChange={(e) => setlang(e.target.value)}
+        onChange={(e) => {
+          setlang(e.target.value);
+          changeLanguage(e.target.value);
+        }}
         sx={{
           "& .MuiSelect-select": {
             color:
@@ -42,8 +45,8 @@ export default function LangSelect() {
           },
         }}
       >
-        <MenuItem value={"Fr"}>Fr</MenuItem>
-        <MenuItem value={"Eng"}>Eng</MenuItem>
+        <MenuItem value={"fr"}>Fr</MenuItem>
+        <MenuItem value={"en"}>En</MenuItem>
       </Select>
     </FlexBox>
   );
