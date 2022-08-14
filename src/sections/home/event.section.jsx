@@ -75,7 +75,7 @@ export default function EventSection() {
         {
             [0,1,2].map((i)=>(
                 <>
-                            <Grid key={i} item xs={4}>
+                            <Grid key={i} item xs={5}>
                             <img
                                 src={ImageTab[i]}
                                 style={{objectFit:"cover",
@@ -139,7 +139,7 @@ export default function EventSection() {
               {
                   [3,4].map((i)=>(
                 <>
-                    <Grid key={i} item xs={4}
+                    <Grid key={i} item xs={5}
 
                     data-aos='fade-up'
                     data-aos-easing='ease-out-cubic'
@@ -156,7 +156,7 @@ export default function EventSection() {
                       }}
                       alt='test' />
                   </Grid>
-                  <Grid item xs={6}
+                  <Grid item xs={7}
       
                     data-aos='fade-left'
                     data-aos-easing='ease-out-cubic'
@@ -204,7 +204,7 @@ export default function EventSection() {
 
         <Button
           variant="contained"
-          sx={{ marginLeft: "75%", marginTop: "70px",marginBottom:"45px", display: { xs: "none", md: "flex" } ,backgroundColor:"primary.main"}}
+          sx={{ marginLeft: "87%", marginTop: "70px",marginBottom:"45px", display: { xs: "none", md: "flex" } ,backgroundColor:"primary.main"}}
           onClick={HandleMore}
           endIcon={more ? More : Less}
         >
