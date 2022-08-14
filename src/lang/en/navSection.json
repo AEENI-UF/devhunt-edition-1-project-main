@@ -1,4 +1,8 @@
 {
     "CONTACT_US": "Contact us",
-    "LANGUAGE": "Language"
+    "HOME_NAV":"Home",
+    "CLUBS_NAV":"Clubs",
+    "EVENTS_NAV":"Events",
+    "PARNTENERS_NAV":"Parteners",
+    "ORGANISM_NAV":"Organism"
 }

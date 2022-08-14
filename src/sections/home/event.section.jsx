@@ -83,12 +83,12 @@ export default function EventSection() {
         {
             [0,1,2].map((i)=>(
                 <>
-                            <Grid key={i} item xs={5}>
+                            <Grid key={i} item xs={4.5}>
                             <img
                                 src={ImageTab[i]}
                                 style={{objectFit:"cover",
-                                width: "25vw",
-                                height: "200px",
+                                width: "350px",
+                                height: "220px",
                                 borderRadius: "13px",
                                 boxShadow: `2px 3px 3px 3px ${theme.palette.mode === "light" ? "#eaeaea" : "rgba(0, 0, 0, 0.309)"}`
                                 }}
@@ -102,7 +102,7 @@ export default function EventSection() {
                             data-aos-easing='ease-out-cubic'
                             data-aos-duration='6000'
                             >
-                            <Box sx={{ height: "100%"}}>
+                            <Box sx={{ height: "100%",paddingRight:"10vw"}}>
                                 <Typography
                                 variant="h6"
                                 color="primary.main"
@@ -147,7 +147,7 @@ export default function EventSection() {
               {
                   [3,4].map((i)=>(
                 <>
-                    <Grid key={i} item xs={5}
+                    <Grid key={i} item xs={4.5}
 
                     data-aos='fade-up'
                     data-aos-easing='ease-out-cubic'
@@ -156,7 +156,8 @@ export default function EventSection() {
                     <img
                       src={ImageTab[i]}
                       style={{
-                        width: "25vw",
+                        width: "350px",
+                        height: "220px",
                         objectFit:"cover",
                         height: "200px",
                         borderRadius: "13px",
@@ -170,7 +171,7 @@ export default function EventSection() {
                     data-aos-easing='ease-out-cubic'
                     data-aos-duration='1000'
                     >
-                    <Box sx={{ height: "100%" }}>
+                    <Box sx={{ height: "100%",paddingRight:"10vw" }}>
                       <Typography
                         variant="h6"
                         color="primary.main"
@@ -247,11 +248,11 @@ export default function EventSection() {
                     <Grid key={i} item xs={12}>
                         <img
                         alt='image description'
-                        style={{ width: "100%", height: "auto", borderRadius: "13px" ,
+                        style={{ width: "100%", height: "80vw", borderRadius: "13px" ,
                         objectFit:"cover",}}
                         src={ImageTab[i]} />
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid item xs={12} sx={{paddinBottom:"32px",paddingLeft:"10%"}}>
                         <Typography
                         variant="h6"
                         color="primary.main"
@@ -297,7 +298,7 @@ export default function EventSection() {
           sx={resMore && { display: "none" }}
           style={{ marginTop: "43px" }}
         >
-          <Grid container spacing={3}>
+          <Grid container spacing={1}>
 
           {
             [3,4].map((i)=>(
@@ -306,11 +307,11 @@ export default function EventSection() {
             <Grid key={i} item xs={12}>
               <img
                 alt='image description'
-                style={{ width: "100%", height: "auto", borderRadius: "13px",
+                style={{ width: "100%", height: "80vw", borderRadius: "13px",
                 objectFit:"cover", }}
                 src={ImageTab[i]} />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} sx={{paddinBottom:"32px",paddingLeft:"10%"}}>
               <Typography
                 variant="h6"
                 color="primary.main"
