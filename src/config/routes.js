@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { HomeLayout } from "../layouts";
 import Home from "../pages";
+import C2E from "../pages/galeries/c2e";
 
 export const ROUTES = [
   {
@@ -12,6 +13,11 @@ export const ROUTES = [
         path: "/",
         key: "home",
         component: <Home />,
+      },
+      {
+        path: "/club/c2e",
+        key: "c2e",
+        component: <C2E />,
       },
     ],
   },

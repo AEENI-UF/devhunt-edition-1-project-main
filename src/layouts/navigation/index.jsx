@@ -8,22 +8,14 @@ import { SwicthComponent } from "./components";
 import Aeeni from "../../assets/logo/logo.png";
 import AeeniDark from "../../assets/logo/aeeni-light.png";
 import { Home } from "@mui/icons-material";
+import { AppBar, Toolbar } from "@mui/material";
 
-const navStyles = {
-  display: "flex",
-  position: "fixed",
-  alignItems: "center",
-  justifyContent: "space-between",
-  height: "4rem",
-  width: "100vw",
-  left: "0",
-  zIndex: 99,
-  // border: "dotted",
-};
+export const NAVIGATION_HEIGHT = "4rem";
 
 const GridFlex = styled(Grid)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
+  marginRight: 10,
 }));
 
 const SECTIONS = [
@@ -71,8 +63,8 @@ export function Navigation() {
   function update() {
     if (scrollY?.current < scrollY?.prev) {
       setHidden(false);
-    } else if (scrollY?.current > 100 && scrollY?.current > scrollY?.prev) {
-      setHidden(true);
+    } else if (scrollY?.current > 150 && scrollY?.current > scrollY?.prev) {
+      setHidden(false);
     }
   }
 
@@ -88,61 +80,51 @@ export function Navigation() {
   });
 
   return (
-    <Box
+    <AppBar
       component={motion.div}
+      variant="elevation"
+      position="sticky"
       variants={variants}
       animate={hidden ? "hidden" : "visible"}
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
       sx={{
-        ...navStyles,
-        height: { xs: "4rem", md: "4rem" },
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        top: 0,
+        zIndex: 99,
+        height: NAVIGATION_HEIGHT,
         px: { xs: "1rem", lg: "3rem" },
         backgroundColor:
           theme.palette.mode === "light" ? "primary.main" : "white",
       }}
     >
-      <Grid container>
-        <Grid
-          item
-          xs={10}
-          md={3}
-          sx={{ display: "flex", alignItems: "center" /*  border: "dotted" */ }}
-        >
-          <Logo />
-        </Grid>
-        <Grid
-          container
-          item
-          md={6}
-          sx={{
-            display: { xs: "none", md: "flex" },
-            // border: "dotted",
-            justifyContent: "center",
-          }}
-        >
-          {SECTIONS.map((section) => (
-            <Grid
-              item
-              key={section.key}
-              md={2}
-              sx={{ display: "flex", alignItems: "center" }}
-            >
-              <motion.div
-                whileHover={
-                  {
-                    // textShadow: "0 0 4px rgb(5, 255, 251)",
-                  }
-                }
-                whileTap={{
-                  scale: 2.5,
-                  opacity: 0,
-                  transition: {
-                    delay: 0,
-                    duration: 0.2,
-                    velocity: 10,
-                  },
-                }}
-              >
+      <Toolbar sx={{ width: "100%" }}>
+        <Grid container>
+          <Grid
+            item
+            xs={10}
+            md={3}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              // border: "dotted",
+            }}
+          >
+            <Logo />
+          </Grid>
+          <Grid
+            container
+            item
+            md={6}
+            sx={{
+              display: { xs: "none", md: "flex" },
+              // border: "dotted",
+              justifyContent: "center",
+            }}
+          >
+            {SECTIONS.map((section) => (
+              <Button key={section.key} component={motion.button}>
                 <Typography
                   sx={{
                     color:
@@ -153,39 +135,41 @@ export function Navigation() {
                 >
                   {section.key}
                 </Typography>
-              </motion.div>
-            </Grid>
-          ))}
-        </Grid>
+              </Button>
+            ))}
+          </Grid>
 
-        <Grid
-          container
-          item
-          md={3}
-          sx={{
-            display: { xs: "none", md: "flex" },
-            // border: "dotted",
-            justifyContent: "space-between",
-          }}
-        >
-          <GridFlex>
-            <LangSelect />
-          </GridFlex>
-          <GridFlex item>
-            <SwicthComponent />
-          </GridFlex>
+          <Grid
+            container
+            item
+            md={3}
+            sx={{
+              display: { xs: "none", md: "flex" },
+              // border: "dotted",
+              justifyContent: "end",
+            }}
+          >
+            <GridFlex>
+              {/* <LangSelect /> */}
+              ENg
+            </GridFlex>
+            <GridFlex item>
+              <SwicthComponent />
+            </GridFlex>
 
-          <GridFlex item>
-            <Button variant="contained" color="secondary">
-              Contact us
-            </Button>
-          </GridFlex>
-        </Grid>
+            <GridFlex item>
+              <Button variant="contained" color="secondary">
+                Contact us
+              </Button>
+            </GridFlex>
+          </Grid>
 
-        <Grid item xs={2} sx={{ display: { xs: "flex", md: "none" } }}>
-          <NavDrawer sections={SECTIONS} />
+          <Grid item xs={2} sx={{ display: { xs: "flex", md: "none" } }}>
+            <NavDrawer sections={SECTIONS} />
+          </Grid>
         </Grid>
-      </Grid>
-    </Box>
+      </Toolbar>
+    </AppBar>
   );
 }
+<Box></Box>;
