@@ -1,4 +1,5 @@
 import React from "react";
+import BasicMasonry from "../sections/home/club.section";
 import OrganismSection from "../sections/home/organisme.section";
 import { PartenaireSection } from "../sections/home/partener.section";
 
@@ -7,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <PartenaireSection />
-      <OrganismSection />
+      <BasicMasonry />
     </div>
   );
 }

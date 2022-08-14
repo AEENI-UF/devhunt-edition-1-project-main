@@ -1,6 +1,7 @@
 * {
   /* border: 0.5px solid red; */
   /* color: #5d1924c7; */
+  filter: brightness();
 }
 
 body {

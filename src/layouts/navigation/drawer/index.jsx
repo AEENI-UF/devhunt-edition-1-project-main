@@ -13,7 +13,7 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import { Close } from "@mui/icons-material";
+import { Close, Menu } from "@mui/icons-material";
 import { useTheme } from "@emotion/react";
 
 const container = {
@@ -50,13 +50,16 @@ const NavDrawer = ({ sections }) => {
 
   return (
     <>
-      <motion.div
-        initial={false}
-        animate={isOpen ? "open" : "closed"}
-        custom={height}
-        ref={containerRef}
-      >
-        <MenuToggle toggle={() => toggleOpen()} />
+      <div ref={containerRef}>
+        <IconButton onClick={() => toggleOpen()}>
+          <Menu
+            htmlColor={
+              theme.palette.mode === "light"
+                ? "white"
+                : theme.palette.secondary.main
+            }
+          />
+        </IconButton>
         <Drawer open={isOpen} anchor="right" onClose={() => toggleOpen()}>
           <motion.div
             variants={container}
@@ -86,7 +89,7 @@ const NavDrawer = ({ sections }) => {
             </List>
           </motion.div>
         </Drawer>
-      </motion.div>
+      </div>
     </>
   );
 };
