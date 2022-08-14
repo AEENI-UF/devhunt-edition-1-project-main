@@ -121,7 +121,9 @@ export function Footer() {
       variants={variants}
       initial="hide"
       whileInView="visible"
-      viewport="viewportConfig"
+      viewport={{
+        once: true,
+      }}
     >
       <Snow />
       <Container>
@@ -193,7 +195,7 @@ export function Footer() {
               <Grid item>
                 <List
                   sx={{
-                    pb: 5,
+                    pb: 2,
                   }}
                 >
                   {QUICK_CONTACTS.map((contact, i) => {
@@ -272,10 +274,13 @@ export function Footer() {
                         sx={{
                           color: "primary.contrastText",
                           textDecoration: "none",
-                          fontSize: "1.3rem",
+                          fontSize: {
+                            xs: "1rem",
+                            sm: "1.3rem",
+                          },
                           whiteSpace: "nowrap",
                           "&:hover": {
-                            color: "black",
+                            color: "gold",
                           },
                         }}
                         initial={{
@@ -331,9 +336,12 @@ export function Footer() {
                           color: "primary.contrastText",
                           textDecoration: "none",
                           whiteSpace: "nowrap",
-                          fontSize: "1.3rem",
+                          fontSize: {
+                            xs: "1rem",
+                            sm: "1.3rem",
+                          },
                           "&:hover": {
-                            color: "black",
+                            color: "gold",
                           },
                         }}
                         initial={{

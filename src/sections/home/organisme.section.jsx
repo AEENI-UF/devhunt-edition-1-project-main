@@ -199,7 +199,13 @@ export function OrganismSection() {
                 {MemberCard(MEMBERS[2])}
               </Grid>
             </Grid>
-            <Grid item xs={12}>
+            <Grid
+              item
+              xs={12}
+              sx={{
+                zIndex: 1,
+              }}
+            >
               <Grid container alignItems="center" justifyContent="center">
                 {MemberCard(MEMBERS[0])}
               </Grid>
@@ -234,9 +240,10 @@ function MemberCard(member) {
       sx={{
         width: "100%",
         minHeight: CUSTOM_HEIGHT,
-        m: 1,
-        border: "1px solid",
-        borderColor: theme.palette.mode === "dark" ? "#fff" : "secondary.main",
+        mx: -5,
+        my: -3,
+        border: "2px solid",
+        borderColor: theme.palette.mode === "dark" ? "secondary.main" : "#fff",
         borderRadius: "1rem",
         backgroundColor:
           theme.palette.mode === "dark" ? "#fff" : "secondary.main",
