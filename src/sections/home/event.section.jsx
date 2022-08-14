@@ -5,7 +5,8 @@ import {
   Box,
   Grid,
   Button,
-  Container
+  Container,
+  useTheme
 } from '@mui/material';
 import Logo1 from '../../assets/Events/devhunt.jpg';
 import Logo2 from '../../assets/Events/Rnc.jpg';
@@ -24,13 +25,20 @@ const More = <ExpandMore />;
 
 export default function EventSection() {
     const {t}=useTranslation();
+    const theme=useTheme();
   const [more, setMore] = useState(true);
   const [resMore, setResMore] = useState(true);
 
     const ImageTab = [
         Logo1 , Logo2 , Logo3 , Logo4,Logo5
     ]
-    const dateTab =["13 - 14 Aout 2022","23 juillet 2022","5 fevrier 2022","26-27 mai 2022 ","19 Mars 2022"];
+    const dateTab =[
+                    t("DEV_HUNT_ED1_DATE"),
+                    t("RNC_DATE"),
+                    t( "ALGO_COMPETE_DATE"),
+                    t( "INTERNAL_HACKATHON_HIU_DATE"),
+                    t("WFNC_ED1_DATE")
+                  ];
 
   const ContentTab = [
       t("DEV_HUNT_ED1_DESCRIPTION"),
@@ -82,7 +90,7 @@ export default function EventSection() {
                                 width: "25vw",
                                 height: "200px",
                                 borderRadius: "13px",
-                                boxShadow: "2px 3px 3px 3px #eaeaea"
+                                boxShadow: `2px 3px 3px 3px ${theme.palette.mode === "light" ? "#eaeaea" : "rgba(0, 0, 0, 0.309)"}`
                                 }}
                                 data-aos='fade-right'
                                 data-aos-easing='ease-out-cubic'
@@ -152,7 +160,7 @@ export default function EventSection() {
                         objectFit:"cover",
                         height: "200px",
                         borderRadius: "13px",
-                        boxShadow: "2px 3px 3px 3px #eaeaea"
+                        boxShadow: `2px 3px 3px 3px ${theme.palette.mode === "light" ? "#eaeaea" : "rgba(0, 0, 0, 0.309)"}` 
                       }}
                       alt='test' />
                   </Grid>
@@ -204,12 +212,12 @@ export default function EventSection() {
 
         <Button
           variant="contained"
-          sx={{ marginLeft: "87%", marginTop: "70px",marginBottom:"45px", display: { xs: "none", md: "flex" } ,backgroundColor:"primary.main"}}
+          sx={{ marginLeft: "80%", marginTop: "70px",marginBottom:"45px", display: { xs: "none", md: "flex" } ,backgroundColor:"primary.main",padding:"13px"}}
           onClick={HandleMore}
           endIcon={more ? More : Less}
         >
           {
-            more ? "view more " : "view less"
+            more ? t( "SHOW_MORE_EVENT") : t( "SHOW_LESS_EVENT")
           }
         </Button>
 
@@ -347,7 +355,7 @@ export default function EventSection() {
         endIcon={resMore ? More : Less}
       >
         {
-          resMore ? "view more " : "view less"
+          resMore ? t( "SHOW_MORE_EVENT") : t( "SHOW_LESS_EVENT")
         }
       </Button>
 
