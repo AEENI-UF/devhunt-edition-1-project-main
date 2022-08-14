@@ -4,12 +4,13 @@ import LangSelect from "./components/selectLang";
 import { motion, useViewportScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 import NavDrawer from "./drawer";
-import { SwicthComponent } from "./components";
+import { MaterialUISwitch, SwicthComponent } from "./components";
 import Aeeni from "../../assets/logo/logo.png";
 import AeeniDark from "../../assets/logo/aeeni-light.png";
 import { Home } from "@mui/icons-material";
 import { AppBar, Toolbar } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 export const NAVIGATION_HEIGHT = "4rem";
 
@@ -18,10 +19,8 @@ const GridFlex = styled(Grid)(({ theme }) => ({
   alignItems: "center",
   marginRight: 10,
 }));
-  
 
 const Logo = () => {
-
   const theme = useTheme();
   return (
     <Box sx={{ pt: { xs: 1.5, md: 0 } }}>
@@ -35,28 +34,28 @@ const Logo = () => {
 };
 
 export function Navigation() {
-  const {t}=useTranslation();
-  
+  const { t } = useTranslation();
+
   const SECTIONS = [
     {
       key: t("HOME_NAV"),
-      icon: <Home />,
+      id: "home",
     },
     {
       key: t("CLUBS_NAV"),
-      icon: <Home />,
+      id: "club",
     },
     {
       key: t("EVENTS_NAV"),
-      icon: <Home />,
+      id: "event",
     },
     {
       key: t("PARNTENERS_NAV"),
-      icon: <Home />,
+      id: "partener",
     },
     {
-      key:t("ORGANISM_NAV"),
-      icon: <Home />,
+      key: t("ORGANISM_NAV"),
+      id: "organism",
     },
   ];
   const { scrollY } = useViewportScroll();
@@ -125,21 +124,24 @@ export function Navigation() {
               display: { xs: "none", md: "flex" },
               flexWrap: "nowrap",
               justifyContent: "center",
+              alignItems: "center",
             }}
           >
             {SECTIONS.map((section) => (
-              <Button key={section.key} component={motion.button}>
-                <Typography
-                  sx={{
-                    color:
-                      theme.palette.mode === "light"
-                        ? "white"
-                        : theme.palette.primary.main,
-                  }}
-                >
-                  {section.key}
-                </Typography>
-              </Button>
+              <a href={`/#${section.id}`} className="link">
+                <Button key={section.key} component={motion.button}>
+                  <Typography
+                    sx={{
+                      color:
+                        theme.palette.mode === "light"
+                          ? "white"
+                          : theme.palette.primary.main,
+                    }}
+                  >
+                    {section.key}
+                  </Typography>
+                </Button>
+              </a>
             ))}
           </Grid>
 
@@ -163,7 +165,7 @@ export function Navigation() {
 
             <GridFlex item>
               <Button variant="contained" color="secondary">
-               { t("CONTACT_US")}
+                {t("CONTACT_US")}
               </Button>
             </GridFlex>
           </Grid>

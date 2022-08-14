@@ -9,6 +9,8 @@ import COVER_EPC from "../../assets/img/pic1.jpg";
 import COVER_C2E from "../../assets/img/pic2.JPG";
 import COVER1 from "../../assets/img/pic3.JPG";
 import COVER2 from "../../assets/img/pic4.jpg";
+import COVER3 from "../../assets/img/pic5.JPG";
+import COVER4 from "../../assets/img/pic6.JPG";
 
 import LOGO_C3LF from "../../assets/logo/c3lf-logo.jpg";
 import LOGO_CYBERSECURITY from "../../assets/logo/cybersec-logo.jpg";
@@ -58,7 +60,7 @@ export function ClubSection() {
       link: "/club/c2e",
       logo: LOGO_C2E,
 
-      cover: COVER_C2E,
+      cover: COVER3,
       height: 520,
     },
     {
@@ -66,7 +68,7 @@ export function ClubSection() {
       description: t("MULTIMEDIA_CLUB_DESCRIPTION"),
       link: "/club/multimedia",
       logo: LOGO_MULTIMEDIA,
-      cover: COVER2,
+      cover: COVER1,
       height: 450,
     },
     {
@@ -75,7 +77,7 @@ export function ClubSection() {
       description: t({}),
       link: "/club/ecp",
       logo: LOGO_C2E,
-      cover: COVER_EPC,
+      cover: COVER4,
       height: 400,
     },
     {
@@ -90,10 +92,11 @@ export function ClubSection() {
 
   return (
     <Box
+      id="club"
       sx={{
         width: "100%",
         px: { xs: 0, sm: 2, md: 5, lg: 15 },
-        my: { lg: 20 },
+        my: { xs: 10, lg: 20 },
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -101,9 +104,16 @@ export function ClubSection() {
       }}
     >
       <Typography
-        variant="h3"
+        variant="h2"
         color="text.primary"
-        sx={{ mb: 5, fontSize: { xs: 40, sm: 45, lg: 60 } }}
+        sx={{
+          fontWeight: "bold",
+          marginBottom: "43px",
+          marginTop: "94px",
+          textAlign: { xs: " left", lg: "center" },
+          position: "relative",
+          px: 2,
+        }}
       >
         {t("CLUB_SECTION_TITLE")}
       </Typography>

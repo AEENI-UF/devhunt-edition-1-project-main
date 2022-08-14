@@ -11,12 +11,12 @@ import resources from "./lang";
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: "en",
-  fallbackLng: "en",
+  lng: "fr",
+  fallbackLng: "fr",
 });
 
 function App() {
-  const [isDark, setDark] = React.useState(false);
+  const [isDark, setDark] = React.useState(true);
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {

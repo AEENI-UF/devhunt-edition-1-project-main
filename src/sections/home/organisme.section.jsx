@@ -66,14 +66,16 @@ export function OrganismSection() {
       sx={{
         py: 10,
       }}
+      id="organism"
     >
       <Container>
         <Typography
           variant="h2"
+          color="text.primary"
+          fontWeight={"bold"}
           sx={{
             textAlign: "center",
             mb: 10,
-            color: theme.palette.mode === "dark" ? "#fff" : "#000",
           }}
         >
           {t("ORGANISM_SECTION_TITLE")}

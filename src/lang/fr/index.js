@@ -5,6 +5,7 @@ import navSection from "./navSection.json";
 import organismSection from "./organismSection.json";
 import partnerSection from "./partnerSection.json";
 import eventSection from "./eventSection.json";
+import featursection from "./featursection.json";
 
 const fr = {
   ...clubSection,
@@ -14,6 +15,7 @@ const fr = {
   ...organismSection,
   ...navSection,
   ...partnerSection,
+  ...featursection,
 };
 
 export default fr;

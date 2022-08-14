@@ -1,6 +1,11 @@
-import { Grid, Stack, Typography } from "@mui/material";
+import { Box, Grid, Stack, Typography, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
+import Comm from "../../assets/comm.png";
+import Finance from "../../assets/FINANCE.png";
+import Help from "../../assets/help.png";
+import Activity from "../../assets/acticity.png";
+import { useTranslation } from "react-i18next";
 
 const container = {
   show: {
@@ -29,35 +34,41 @@ const item = {
 };
 
 export function FeatureSection() {
+  const { t } = useTranslation();
+  const theme = useTheme();
   const scrollRef = useRef(null);
   const viewportConfig = {
-    // once: true,
     margin: "320px",
   };
 
   const FEATURES = [
     {
-      title: "Facilité de communication",
-      content:
-        "Nous facilitons la communication et le partage d'information entre étudiants et enseignements",
+      title: t("TITLE_COMUNICATION"),
+      content: t("DESCRIPTION_COMMUNICATION"),
+      icon: Comm,
     },
     {
-      title: "Aide aux Edutiants ",
-      content: "Nous aidons les étudiants dans sa vie en étant auprèsd'eux",
+      title: t("TITLE_SALUTARY"),
+      content: t("DESCRIPTION_SALUTARY"),
+      icon: Help,
     },
     {
-      title: "Activités frequentes",
-      content:
-        "Nous organisons des diverses activites pour hausser le niveau des étudiants",
+      title: t("TITLE_ACTIVITY"),
+      content: t("DESCRIPTION_ACTIVITY"),
+      icon: Activity,
     },
     {
-      title: "Gestion des finances",
-      content:
-        "Nous gérons la finance au cotés de l'administration de l'établissement",
+      title: t("TITLE_FINANCE"),
+      content: t("DESCRIPTION_FINANCE"),
+      icon: Finance,
     },
   ];
   return (
-    <Grid container sx={{ my: "7rem", px: { xs: "1rem", md: "8rem" } }}>
+    <Grid
+      container
+      sx={{ my: "7rem", px: { xs: "1rem", md: "8rem" } }}
+      id="features"
+    >
       <Grid
         item
         lg={5}
@@ -113,7 +124,16 @@ export function FeatureSection() {
         item
         lg={7}
         ref={scrollRef}
+        style={{ position: "relative" }}
       >
+        <Box
+          id="hero-element-design-2"
+          sx={{
+            bgcolor: `${
+              theme.palette.mode === "light" ? "#ffc2ccc7" : "#e6074fbf"
+            }`,
+          }}
+        ></Box>
         {FEATURES.map((feature, i) => (
           <Grid
             item
@@ -133,18 +153,15 @@ export function FeatureSection() {
                 maxWidth: "16rem",
               }}
             >
-              <motion.div
+              <motion.img
+                src={feature.icon}
                 variants={item}
                 initial="hide"
                 whileInView="show"
                 viewport={viewportConfig}
-                style={{
-                  width: "60px",
-                  height: "60px",
-                  borderRadius: "50%",
-                  backgroundColor: "red",
-                }}
-              ></motion.div>
+                alt=""
+                style={{ width: "80px", height: "80px" }}
+              />
               <Typography
                 variant="h5"
                 fontWeight="bold"
@@ -186,7 +203,7 @@ export function FeatureSection() {
           spacing={3}
           sx={{
             height: "100%",
-            alignItems: "center",
+            alignItems: "start",
             display: "flex",
             justifyContent: "center",
             flexDirection: "column",
@@ -202,7 +219,7 @@ export function FeatureSection() {
             whileInView={"show"}
             viewport={viewportConfig}
           >
-            Tincidunt Vel Praesent Vehicula Ultricies
+            {t("TITLE_OBJECTIF")}
           </Typography>
           <Typography
             variant="body1"
@@ -213,9 +230,7 @@ export function FeatureSection() {
             whileInView="show"
             viewport={viewportConfig}
           >
-            Egestas Praesent Ex Fames Class Aliquam. Consectetuer Eleifend
-            Conubia Suspendisse Enim Nibh Et Dapibus Fusce Pulvinar Maecenas
-            Quam.
+            {t("DESCRIPTION_OBJECTIF")}
           </Typography>
         </Stack>
       </Grid>
