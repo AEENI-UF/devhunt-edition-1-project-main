@@ -10,70 +10,220 @@ import WecoursCover from "../../assets/wecours.jpg";
 
 const data = [
   {
-    partener: "name",
+    partener: "Akata",
     description:
       "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
     cover: AkataCover,
     logo: "",
   },
+
   {
-    partener: "name",
-    description:
-      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
-    cover: AratoCover,
-    logo: "",
-  },
-  {
-    partener: "name",
-    description:
-      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
-    cover: KalibotCover,
-    logo: "",
-  },
-  {
-    partener: "name",
-    description:
-      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
-    cover: MahefaCover,
-    logo: "",
-  },
-  {
-    partener: "name",
+    partener: "WECours",
     description:
       "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
     cover: WecoursCover,
     logo: "",
   },
   {
-    partener: "name",
-    description:
-      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
-    cover: AkataCover,
-    logo: "",
-  },
-  {
-    partener: "name",
+    partener: "Kalibot",
     description:
       "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
     cover: KalibotCover,
     logo: "",
   },
   {
-    partener: "name",
+    partener: "AkataCover",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: AkataCover,
+    logo: "",
+  },
+  {
+    partener: "Mahefa Numeric",
     description:
       "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
     cover: MahefaCover,
     logo: "",
   },
   {
-    partener: "name",
+    partener: "Arato",
     description:
       "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
     cover: AratoCover,
     logo: "",
   },
   {
-    partener: "name",
+    partener: "Kalibot",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: KalibotCover,
+    logo: "",
+  },
+  {
+    partener: "Arato",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: AratoCover,
+    logo: "",
+  },
+  {
+    partener: "Mahefa Numeric",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: MahefaCover,
+    logo: "",
+  },
+
+  {
+    partener: "Kalibot",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: KalibotCover,
+    logo: "",
+  },
+];
+
+const data2 = [
+  {
+    partener: "Akata",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: AkataCover,
+    logo: "",
+  },
+  {
+    partener: "Arato",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: AratoCover,
+    logo: "",
+  },
+  {
+    partener: "WECours",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: WecoursCover,
+    logo: "",
+  },
+  {
+    partener: "Mahefa Numeric",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: MahefaCover,
+    logo: "",
+  },
+  {
+    partener: "Kalibot",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: KalibotCover,
+    logo: "",
+  },
+  {
+    partener: "AkataCover",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: AkataCover,
+    logo: "",
+  },
+  {
+    partener: "Kalibot",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: KalibotCover,
+    logo: "",
+  },
+  {
+    partener: "Mahefa Numeric",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: MahefaCover,
+    logo: "",
+  },
+  {
+    partener: "Arato",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: AratoCover,
+    logo: "",
+  },
+  {
+    partener: "Kalibot",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: KalibotCover,
+    logo: "",
+  },
+];
+
+const data3 = [
+  {
+    partener: "Akata",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: AkataCover,
+    logo: "",
+  },
+
+  {
+    partener: "Mahefa Numeric",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: MahefaCover,
+    logo: "",
+  },
+  {
+    partener: "Arato",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: AratoCover,
+    logo: "",
+  },
+  {
+    partener: "WECours",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: WecoursCover,
+    logo: "",
+  },
+  {
+    partener: "Kalibot",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: KalibotCover,
+    logo: "",
+  },
+
+  {
+    partener: "Mahefa Numeric",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: MahefaCover,
+    logo: "",
+  },
+  {
+    partener: "Arato",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: AratoCover,
+    logo: "",
+  },
+  {
+    partener: "AkataCover",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: AkataCover,
+    logo: "",
+  },
+  {
+    partener: "Kalibot",
+    description:
+      "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
+    cover: KalibotCover,
+    logo: "",
+  },
+  {
+    partener: "Kalibot",
     description:
       "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
     cover: KalibotCover,
@@ -114,9 +264,10 @@ export default function AnimatedPartenersCard() {
         <Box
           sx={{
             position: "absolute",
-            top: "80vh",
+            top: "76vh",
             width: "100vw",
-            height: "30vh",
+            height: "15vh",
+            // border: "white dotted",
             backgroundImage: `linear-gradient(rgba(255,255,255,0),${theme.palette.background.default})`,
             zIndex: 2,
           }}
@@ -167,7 +318,7 @@ export default function AnimatedPartenersCard() {
               display: { xs: "none", sm: "flex" },
             }}
           >
-            {data.map((item) => (
+            {data2.map((item) => (
               <PartenerCard key={item.name} item={item} />
             ))}
           </Stack>
@@ -184,7 +335,7 @@ export default function AnimatedPartenersCard() {
             }}
             sx={{ mr: { sm: 2, lg: 2 }, display: { xs: "none", md: "flex" } }}
           >
-            {data.map((item) => (
+            {data3.map((item) => (
               <PartenerCard key={item.name} item={item} />
             ))}
           </Stack>

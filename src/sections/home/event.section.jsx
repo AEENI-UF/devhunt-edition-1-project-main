@@ -22,7 +22,7 @@ AOS.init();
 const Less = <ExpandLess />;
 const More = <ExpandMore />;
 
-export default function EventSection() {
+export function EventSection() {
     const {t}=useTranslation();
   const [more, setMore] = useState(true);
   const [resMore, setResMore] = useState(true);

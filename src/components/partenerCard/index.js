@@ -13,15 +13,15 @@ import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles({
   Media: {
     clipPath: "polygon(0 0, 100% 0, 100% 92%, 0 65%)",
-    height: "120px",
+    height: "150px",
   },
   Avatar: {
     position: "absolute !important",
-    top: "50px !important",
+    top: "65px !important",
     left: "15px !important",
-    width: "60px !important",
+    width: "80px !important",
     border: "6px solid white",
-    height: "60px !important",
+    height: "80px !important",
   },
   btn: {
     backgroundColor: "red",
@@ -34,7 +34,8 @@ export default function PartenerCard({ item }) {
     <Card
       sx={{
         width: { xs: "95%", sm: 240, md: 220 },
-        height: { xs: 280, md: 300 } /*  border: "dotted"  */,
+        height: { xs: 280, md: 240 },
+        // transform: "rotate(90deg)",
       }}
     >
       <CardActionArea>
@@ -54,7 +55,7 @@ export default function PartenerCard({ item }) {
         />
         <CardContent sx={{ marginTop: "-34px", padding: "32px" }}>
           {<Typography variant="h6">{item.partener}</Typography>}
-          <Typography variant="subtitle2">{item.description}</Typography>
+          {/* <Typography variant="subtitle2">{item.description}</Typography> */}
         </CardContent>
       </CardActionArea>
     </Card>
