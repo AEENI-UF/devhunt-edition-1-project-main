@@ -1,4 +1,5 @@
-import { Box, styled, Typography } from "@mui/material";
+import { Box, styled, Typography, useTheme } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import AnimatedPartenersCard from "../../components/animatedParterners";
 
 const Flex = styled(Box)(({ theme }) => ({
@@ -10,12 +11,15 @@ const Flex = styled(Box)(({ theme }) => ({
 }));
 
 export function PartenaireSection() {
+  const { t } = useTranslation();
   return (
-    <div>
+    <Box my={10}>
       <Flex>
-        <Typography variant="h3">Our Parteners</Typography>
+        <Typography variant="h3" color="text.primary">
+          {t("PARTNER_SECTION_TITLE")}
+        </Typography>
       </Flex>
       <AnimatedPartenersCard />
-    </div>
+    </Box>
   );
 }

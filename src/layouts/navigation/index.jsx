@@ -44,7 +44,7 @@ const SECTIONS = [
 const Logo = () => {
   const theme = useTheme();
   return (
-    <Box>
+    <Box sx={{ pt: { xs: 1.5, md: 0 } }}>
       {theme.palette.mode === "light" ? (
         <img src={AeeniDark} alt="" style={{ width: 90, height: 40 }} />
       ) : (
@@ -96,7 +96,7 @@ export function Navigation() {
         height: NAVIGATION_HEIGHT,
         px: { xs: "1rem", lg: "3rem" },
         backgroundColor:
-          theme.palette.mode === "light" ? "primary.main" : "white",
+          theme.palette.mode === "light" ? "primary.main" : "#fff",
       }}
     >
       <Toolbar sx={{ width: "100%" }}>
@@ -150,8 +150,7 @@ export function Navigation() {
             }}
           >
             <GridFlex>
-              {/* <LangSelect /> */}
-              ENg
+              <LangSelect />
             </GridFlex>
             <GridFlex item>
               <SwicthComponent />

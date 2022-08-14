@@ -1,57 +1,50 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import { styled, Typography } from "@mui/material";
+import { MenuItem, Select, styled, Typography, useTheme } from "@mui/material";
 import { changeLanguage } from "i18next";
 
 const WIDTH = "55px";
 
 const FlexBox = styled(motion.div)(({ theme }) => ({
-  // border: "dotted",
   display: "flex",
   // alignContent: "space-evenly",
   // alignItems: 'center'
 }));
-const Item = styled(motion.div)(({ theme }) => ({
-  color: theme.palette.mode === "light" ? "white" : theme.palette.primary.main,
-  // border: "dotted",
-  textAlign: "center",
-  width: WIDTH,
-}));
-
-const Indicator = styled(motion.div)(({ theme }) => ({
-  backgroundColor:
-    theme.palette.mode === "light" ? "white" : theme.palette.primary.main,
-  // border: "dotted",
-  height: "2px",
-  width: WIDTH,
-  position: "relative",
-  top: 8,
-}));
 
 export default function LangSelect() {
-  const [lang, setlang] = React.useState("fr");
+  const [lang, setlang] = React.useState("Fr");
+  const theme = useTheme();
   return (
     <FlexBox>
-      <Item>
-        <Typography
-          onClick={() => {
-            setlang("en");
-            changeLanguage("en");
-          }}
-        >
-          Eng
-        </Typography>
-        {lang === "en" && <Indicator layoutId="indicator" />}
-      </Item>
-      <Item
-        onClick={() => {
-          setlang("fr");
-          changeLanguage("fr");
+      <Select
+        labelId="select-language"
+        id="select-language"
+        value={lang}
+        onChange={(e) => setlang(e.target.value)}
+        sx={{
+          "& .MuiSelect-select": {
+            color:
+              theme.palette.mode === "dark"
+                ? theme.palette.primary.main
+                : "white",
+            border: `1px solid ${
+              theme.palette.mode === "dark"
+                ? theme.palette.primary.main
+                : "white"
+            }`,
+            width: "30px",
+          },
+          "& .MuiSvgIcon-root": {
+            color:
+              theme.palette.mode === "dark"
+                ? theme.palette.primary.main
+                : "white",
+          },
         }}
       >
-        <Typography>Fr</Typography>
-        {lang === "fr" && <Indicator layoutId="indicator" />}
-      </Item>
+        <MenuItem value={"Fr"}>Fr</MenuItem>
+        <MenuItem value={"Eng"}>Eng</MenuItem>
+      </Select>
     </FlexBox>
   );
 }

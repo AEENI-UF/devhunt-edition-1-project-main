@@ -1,8 +1,4 @@
 import * as React from "react";
-import { useRef } from "react";
-import { motion, useCycle } from "framer-motion";
-import { useDimensions } from "./use-dimensions";
-import { MenuToggle } from "./MenuToggle";
 import {
   Box,
   Drawer,
@@ -10,18 +6,16 @@ import {
   List,
   ListItem,
   ListItemButton,
-  ListItemIcon,
   ListItemText,
 } from "@mui/material";
 import { Close, Menu } from "@mui/icons-material";
 import { useTheme } from "@emotion/react";
+import { SwicthComponent } from "../components";
+import { useCycle } from "framer-motion";
+import LangSelect from "../components/selectLang";
 
 const container = {
-  hide: {
-    scale: 0,
-  },
   show: {
-    scale: 1,
     transition: {
       staggerChildren: 0.2,
       stiffness: 80,
@@ -44,53 +38,48 @@ const item = {
 
 const NavDrawer = ({ sections }) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
-  const containerRef = useRef(null);
-  const { height } = useDimensions(containerRef);
   const theme = useTheme();
 
   return (
-    <>
-      <div ref={containerRef}>
-        <IconButton onClick={() => toggleOpen()}>
-          <Menu
-            htmlColor={
-              theme.palette.mode === "light"
-                ? "white"
-                : theme.palette.secondary.main
-            }
-          />
-        </IconButton>
-        <Drawer open={isOpen} anchor="right" onClose={() => toggleOpen()}>
-          <motion.div
-            variants={container}
-            initial="hide"
-            animate="show"
-            style={{ width: "calc(100vw - 60px)" }}
-          >
-            <Box my={2.2}>
-              <IconButton onClick={() => toggleOpen()}>
-                <Close
-                  fontSize="medium"
-                  htmlColor={theme.palette.primary.main}
-                />
-              </IconButton>
-            </Box>
-            <List>
-              {sections.map((section) => (
-                <ListItemButton
-                  component={motion.li}
-                  variants={item}
-                  key={`w-${section.key}`}
-                >
-                  <ListItemIcon>{section.icon}</ListItemIcon>
-                  <ListItemText> {section.key}</ListItemText>
-                </ListItemButton>
-              ))}
-            </List>
-          </motion.div>
-        </Drawer>
-      </div>
-    </>
+    <div>
+      <IconButton
+        onClick={() => toggleOpen()}
+        sx={{ position: "relative", top: 5, left: 10 }}
+      >
+        <Menu
+          htmlColor={
+            theme.palette.mode === "light"
+              ? "white"
+              : theme.palette.secondary.main
+          }
+          fontSize="large"
+        />
+      </IconButton>
+      <Drawer open={isOpen} anchor="top" onClose={() => toggleOpen()}>
+        <Box sx={{ height: "80vh", p: 3 }}>
+          <Box display="flex" justifyContent="end">
+            <IconButton onClick={() => toggleOpen()}>
+              <Close fontSize="medium" htmlColor={theme.palette.primary.main} />
+            </IconButton>
+          </Box>
+          <List>
+            {sections.map((section) => (
+              <ListItemButton key={`w-${section.key}`}>
+                <ListItemText> {section.key}</ListItemText>
+              </ListItemButton>
+            ))}
+            <ListItem>
+              <ListItemText>Dark mode</ListItemText>
+              <SwicthComponent />
+            </ListItem>
+            <ListItem>
+              <ListItemText>Choose a language</ListItemText>
+              <LangSelect />
+            </ListItem>
+          </List>
+        </Box>
+      </Drawer>
+    </div>
   );
 };
 

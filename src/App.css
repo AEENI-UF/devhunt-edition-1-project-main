@@ -8,3 +8,7 @@ body {
   width: 100vw;
   overflow-x: hidden;
 }
+
+.link {
+  text-decoration: none;
+}

@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import Masonry from "@mui/lab/Masonry";
-import { styled, Paper, Box, Typography } from "@mui/material";
+import { styled, Paper, Box, Typography, useTheme } from "@mui/material";
 import { ClubCard } from "../../components/clubCard";
 
 import COVER_C3LF from "../../assets/img/pic.JPG";
@@ -16,7 +16,6 @@ import LOGO_MULTIMEDIA from "../../assets/logo/multimedia-logo.jpg";
 import LOGO_C2E from "../../assets/logo/c2e-logo.png";
 
 import { useTranslation } from "react-i18next";
-import { useTransition } from "react";
 
 const heights = [410, 350, 460, 460, 450, 400];
 
@@ -27,42 +26,45 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
   overflow: "hidden",
   position: "relative",
-  // border: "dotted",
 }));
 
 export default function ClubSection() {
   const { t } = useTranslation();
+  const theme = useTheme();
 
   const CLUBS = [
-    {
-      name: "Club d'Entraide de l'Ecole Nationale d'Informatique",
-      initial: "C2E",
-      description: t("C2E_DESCRIPTION"),
-      logo: LOGO_C2E,
-
-      cover: COVER_C2E,
-      height: 500,
-    },
     {
       name: "Club de Linux et Logiciel Libre de Fianarantsoa",
       initial: "C3LF",
       description: t("C3LF_DESCRIPTION"),
+      link: "/club/c3lf",
       logo: LOGO_C3LF,
-
       cover: COVER_C2E,
-      height: 350,
+      height: 500,
     },
     {
-      name: "ENI Pri",
+      name: "ENI Praise",
       initial: "EPC",
       description: t("EPC_DESCRIPTION"),
+      link: "/club/epc",
       logo: LOGO_MULTIMEDIA,
       cover: COVER_EPC,
       height: 350,
     },
     {
+      name: "Club d'Entraide de l'Ecole Nationale d'Informatique",
+      initial: "C2E",
+      description: t("C2E_DESCRIPTION"),
+      link: "/club/c2e",
+      logo: LOGO_C2E,
+
+      cover: COVER_C2E,
+      height: 520,
+    },
+    {
       name: "Multimedia",
       description: t("MULTIMEDIA_CLUB_DESCRIPTION"),
+      link: "/club/multimedia",
       logo: LOGO_MULTIMEDIA,
       cover: COVER2,
       height: 450,
@@ -71,6 +73,7 @@ export default function ClubSection() {
       name: "English Club based on practice",
       initial: "ECP",
       description: t({}),
+      link: "/club/ecp",
       logo: LOGO_C2E,
       cover: COVER_EPC,
       height: 400,
@@ -78,6 +81,7 @@ export default function ClubSection() {
     {
       name: "ENI Cybersecurity",
       description: t("CYBERSECURITY_DESCRIPTION"),
+      link: "/club/cybersecurity",
       logo: LOGO_CYBERSECURITY,
       height: 400,
       cover: COVER_EPC,
@@ -88,16 +92,17 @@ export default function ClubSection() {
     <Box
       sx={{
         width: "100%",
-        px: { xs: 0, sm: 2, md: 5, lg: 20 },
+        px: { xs: 0, sm: 2, md: 5, lg: 15 },
         my: { lg: 20 },
         display: "flex",
-        justifyContent: "center",
         flexDirection: "column",
+        justifyContent: "center",
         alignItems: "center",
       }}
     >
       <Typography
         variant="h3"
+        color="text.primary"
         sx={{ mb: 5, fontSize: { xs: 40, sm: 45, lg: 60 } }}
       >
         {t("CLUB_SECTION_TITLE")}

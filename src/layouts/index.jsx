@@ -7,7 +7,7 @@ export function HomeLayout() {
   return (
     <>
       <Navigation />
-      <Box /* sx={{ pt: NAVIGATION_HEIGHT }} */>
+      <Box>
         <Outlet />
       </Box>
       <Footer />
