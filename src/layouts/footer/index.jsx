@@ -16,6 +16,24 @@ import {
   Divider,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import { Snow } from "../../components/particule/Snow";
+
+const variants = {
+  hide: {
+    opacity: 0,
+    y: 200,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      staggerChildren: 0.2,
+      delayChildren: 0.2,
+    },
+  },
+};
 
 export function Footer() {
   const { t } = useTranslation();
@@ -87,16 +105,21 @@ export function Footer() {
 
   return (
     <Box
-      component="footer"
+      component={motion.footer}
       sx={{
-        // backgroundColor: "red",
+        backgroundColor: "#400000",
         pt: {
           xs: 7,
           sm: 10,
         },
         pb: 3,
+        position: "relative",
       }}
+      variants={variants}
+      initial="hide"
+      whileInView="visible"
     >
+      <Snow />
       <Container>
         <Grid
           container
@@ -239,7 +262,7 @@ export function Footer() {
                   {CLUB_LINKS.map((link, i) => (
                     <ListItemText key={i}>
                       <Typography
-                        component="a"
+                        component={motion.a}
                         href={link.url}
                         alt={`link to ${link.name}`}
                         target="_blank"
@@ -251,6 +274,19 @@ export function Footer() {
                           "&:hover": {
                             color: "black",
                           },
+                        }}
+                        initial={{
+                          opacity: 0,
+                          y: 100,
+                        }}
+                        animate={{
+                          opacity: 1,
+                          y: 0,
+                        }}
+                        transition={{
+                          delay: `0.${i * 3}`,
+                          duration: 0.8,
+                          type: "tween",
                         }}
                       >
                         {link.name}
@@ -273,7 +309,6 @@ export function Footer() {
                   sx={{
                     fontWeight: "bold",
                     textDecoration: "underline",
-                    // whiteSpace: "nowrap",
                     color: "primary.contrastText",
                   }}
                 >
@@ -287,7 +322,7 @@ export function Footer() {
                   {PARTNER_LINKS.map((link, i) => (
                     <ListItemText key={i}>
                       <Typography
-                        component="a"
+                        component={motion.a}
                         href={link.url}
                         alt={`link to ${link.name}`}
                         target="_blank"
@@ -299,6 +334,19 @@ export function Footer() {
                           "&:hover": {
                             color: "black",
                           },
+                        }}
+                        initial={{
+                          opacity: 0,
+                          y: 100,
+                        }}
+                        animate={{
+                          opacity: 1,
+                          y: 0,
+                        }}
+                        transition={{
+                          delay: `0.${i * 3}`,
+                          duration: 0.8,
+                          type: "tween",
                         }}
                       >
                         {link.name}
@@ -315,7 +363,7 @@ export function Footer() {
         <Divider
           sx={{
             borderBottomWidth: 1,
-            // backgroundColor: "#fff",
+            backgroundColor: "#fff",
           }}
         />
         <Box

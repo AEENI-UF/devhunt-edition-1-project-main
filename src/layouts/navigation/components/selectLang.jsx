@@ -1,6 +1,7 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import { styled, Typography } from "@mui/material";
+import { changeLanguage } from "i18next";
 
 const WIDTH = "55px";
 
@@ -27,16 +28,28 @@ const Indicator = styled(motion.div)(({ theme }) => ({
 }));
 
 export default function LangSelect() {
-  const [lang, setlang] = React.useState("Eng");
+  const [lang, setlang] = React.useState("fr");
   return (
     <FlexBox>
       <Item>
-        <Typography onClick={() => setlang("Eng")}>Eng</Typography>
-        {lang === "Eng" && <Indicator layoutId="indicator" />}
+        <Typography
+          onClick={() => {
+            setlang("en");
+            changeLanguage("en");
+          }}
+        >
+          Eng
+        </Typography>
+        {lang === "en" && <Indicator layoutId="indicator" />}
       </Item>
-      <Item onClick={() => setlang("Fr")}>
+      <Item
+        onClick={() => {
+          setlang("fr");
+          changeLanguage("fr");
+        }}
+      >
         <Typography>Fr</Typography>
-        {lang === "Fr" && <Indicator layoutId="indicator" />}
+        {lang === "fr" && <Indicator layoutId="indicator" />}
       </Item>
     </FlexBox>
   );
