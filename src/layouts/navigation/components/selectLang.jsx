@@ -12,14 +12,15 @@ const FlexBox = styled(motion.div)(({ theme }) => ({
   // alignItems: 'center'
 }));
 const Item = styled(motion.div)(({ theme }) => ({
-  color: theme.palette.primary.main,
+  color: theme.palette.mode === "light" ? "white" : theme.palette.primary.main,
   // border: "dotted",
   textAlign: "center",
   width: WIDTH,
 }));
 
 const Indicator = styled(motion.div)(({ theme }) => ({
-  backgroundColor: theme.palette.primary.main,
+  backgroundColor:
+    theme.palette.mode === "light" ? "white" : theme.palette.primary.main,
   // border: "dotted",
   height: "2px",
   width: WIDTH,

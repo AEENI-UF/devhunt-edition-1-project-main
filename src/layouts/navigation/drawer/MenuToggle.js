@@ -1,15 +1,21 @@
 import * as React from "react";
 import { motion } from "framer-motion";
+import { useTheme } from "@mui/material";
 
-const Path = (props) => (
-  <motion.path
-    fill="transparent"
-    strokeWidth="3"
-    stroke="#06d5ffdd"
-    strokeLinecap="round"
-    {...props}
-  />
-);
+const Path = (props) => {
+  const theme = useTheme();
+  return (
+    <motion.path
+      fill="transparent"
+      strokeWidth="3"
+      stroke={`${
+        theme.palette.mode === "light" ? "white" : theme.palette.secondary.main
+      }`}
+      strokeLinecap="round"
+      {...props}
+    />
+  );
+};
 
 export const MenuToggle = ({ toggle }) => (
   <motion.button
@@ -19,6 +25,7 @@ export const MenuToggle = ({ toggle }) => (
       border: "none",
       position: "relative",
       left: 20,
+      top: 15,
     }}
   >
     <svg width="23" height="23" viewBox="0 0 23 23">

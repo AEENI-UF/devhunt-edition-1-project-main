@@ -1,118 +1,84 @@
-import { Box, Button, Grid, Stack, styled, Typography } from "@mui/material";
-import {
-  AnimatePresence,
-  AnimateSharedLayout,
-  motion,
-  useMotionValue,
-  useScroll,
-} from "framer-motion";
-import React, { useState, useRef, useEffect } from "react";
+import Bg from "../../assets/akata.jpg";
+import { motion, AnimatePresence } from "framer-motion";
+import { Box, Typography, Button } from "@mui/material";
+import { useState } from "react";
 
-// import Bg from "../../assets/bg3.jpg";
-
-const container = {
-  show: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const item = {
-  hide: {
-    opacity: 0,
-    y: 400,
-  },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      staggerChildren: 0.2,
-      delayChildren: 0.4,
-    },
-  },
-};
-
-export function ClubCard({ club }) {
+export const ClubCard = ({ index, club }) => {
   const [hovered, setHovered] = useState(false);
-
-  const viewportConfig = {
-    once: true,
-    margin: "320px",
-  };
-
-  const container = {
-    show: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const child = {
-    hide: {
-      opacity: 0,
-    },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 0.3,
-      },
-    },
-  };
-
   return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        height: club.height,
-      }}
-    >
-      <Stack
-        spacing={1}
-        sx={{
-          borderRadius: 5,
-          width: "100%",
-          overflow: "hidden",
-          color: "white",
-          position: "relative",
-          border: "1px solid #ccc",
-        }}
+    <>
+      <div style={{ position: "absolute", top: 30, left: 30, zIndex: 2 }}>
+        <img
+          src={club.logo}
+          alt=""
+          width={60}
+          height={60}
+          style={{ borderRadius: "50%" }}
+        />
+      </div>
+      <Box
         component={motion.div}
-        variants={item}
-        initial="hide"
-        whileInView="show"
-        viewport={viewportConfig}
-      >
+        sx={{
+          backgroundImage: `url(${club.cover})`,
+          height: "110%",
+          backgroundSize: "cover",
+          filter: "brightness(0.5)",
+          position: "relative",
+          textAlign: "left",
+          padding: "0 1rem",
+        }}
+        style={{
+          scale: hovered ? 1.15 : 1,
+          filter: hovered ? "brightness(0.5) blur(1px)" : null,
+        }}
+        onHoverStart={() => setHovered(true)}
+        onHoverEnd={() => setHovered(false)}
+      ></Box>
+      <AnimatePresence>
         <Box
-          sx={{
-            borderRadius: 5,
-            // backgroundColor: "pink",
-            boxShadow: "0 5px 8px rgba(0, 0, 0, 0.5)",
-            backgroundImage: `url(${club.cover})`,
-            height: "100%",
-            width: "100%",
-            backgroundSize: "cover",
-            position: "absolute",
-            filter: "brightness(0.5)",
-          }}
           component={motion.div}
-          whileHover={
-            {
-              // y: -5,
-              // height: `calc(100% + 1.5rem)`,
-              // filter: "brightness(0.5)",
-            }
-          }
+          initial={{ y: -100 }}
+          animate={{
+            y: hovered ? -260 : 100,
+            transition: {
+              stiffness: 20,
+            },
+          }}
           onHoverStart={() => setHovered(true)}
           onHoverEnd={() => setHovered(false)}
+          exit={{
+            y: "600%",
+          }}
+          style={{ zIndex: 2, position: "absolute", padding: "0 1rem" }}
         >
-          cfcfsdfcsdfcsdfcdsf
+          <Typography variant="h3" color="white">
+            Club name
+          </Typography>
         </Box>
-      </Stack>
-    </Box>
+        {hovered && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { delay: 0.2 } }}
+            onHoverStart={() => setHovered(true)}
+            onHoverEnd={() => setHovered(false)}
+            style={{
+              y: -200,
+              zIndex: 2,
+              position: "absolute",
+              textAlign: "left",
+              padding: "0 1rem",
+            }}
+          >
+            <Typography variant="body" sx={{ mb: 2 }} color="white">
+              Donec Consequat Nam Curabitur Sollicitudin Nisl Non Taciti Mauris
+              Inceptos Potenti Nostra Imperdiet Cubilia Tempor Orci
+            </Typography>
+            <div>
+              <Button>Hello</Button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
-}
+};
