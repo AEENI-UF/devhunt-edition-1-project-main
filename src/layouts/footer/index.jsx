@@ -33,6 +33,9 @@ const variants = {
       delayChildren: 0.2,
     },
   },
+  viewportConfig: {
+    once: true,
+  },
 };
 
 export function Footer() {
@@ -107,7 +110,7 @@ export function Footer() {
     <Box
       component={motion.footer}
       sx={{
-        backgroundColor: "#400000",
+        backgroundColor: "#5d1924",
         pt: {
           xs: 7,
           sm: 10,
@@ -118,6 +121,7 @@ export function Footer() {
       variants={variants}
       initial="hide"
       whileInView="visible"
+      viewport="viewportConfig"
     >
       <Snow />
       <Container>
@@ -235,7 +239,6 @@ export function Footer() {
               }}
               justifyContent="space-evenly"
             >
-              {/* <Grid item> */}
               <Grid
                 item
                 justifySelf="flex-end"
@@ -295,8 +298,6 @@ export function Footer() {
                   ))}
                 </List>
               </Grid>
-              {/* </Grid> */}
-              {/* <Grid item> */}
               <Grid
                 item
                 justifySelf="flex-end"
@@ -357,7 +358,6 @@ export function Footer() {
               </Grid>
             </Grid>
           </Grid>
-          {/* </Grid> */}
         </Grid>
 
         <Divider
