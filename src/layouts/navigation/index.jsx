@@ -108,7 +108,7 @@ export function Navigation() {
             sx={{
               display: "flex",
               alignItems: "center",
-              // border: "dotted",
+              flexWrap: "nowrap",
             }}
           >
             <Logo />
@@ -116,10 +116,10 @@ export function Navigation() {
           <Grid
             container
             item
-            md={6}
+            md={5}
             sx={{
               display: { xs: "none", md: "flex" },
-              // border: "dotted",
+              flexWrap: "nowrap",
               justifyContent: "center",
             }}
           >
@@ -142,11 +142,12 @@ export function Navigation() {
           <Grid
             container
             item
-            md={3}
+            md={4}
             sx={{
               display: { xs: "none", md: "flex" },
               // border: "dotted",
               justifyContent: "end",
+              flexWrap: "nowrap",
             }}
           >
             <GridFlex>

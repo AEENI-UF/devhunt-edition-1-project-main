@@ -28,7 +28,7 @@ const Item = styled(Paper)(({ theme }) => ({
   position: "relative",
 }));
 
-export default function ClubSection() {
+export function ClubSection() {
   const { t } = useTranslation();
   const theme = useTheme();
 

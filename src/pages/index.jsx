@@ -1,16 +1,20 @@
 import React from "react";
-import { OrganismSection } from "../sections/home/organisme.section";
+import {
+  ClubSection,
+  ContentHero,
+  EventSection,
+  OrganismSection,
+  FeatureSection,
+} from "../sections/home";
 import { PartenaireSection } from "../sections/home/partener.section";
-import ContentHero from '../sections/home/hero.section';
-import EventSection from '../sections/home/event.section';
-import ClubSection from "../sections/home/club.section";
 
 // mui custom font
 export default function Home() {
   return (
     <div>
-      <ContentHero/>
-      <EventSection/>
+      <ContentHero />
+      <FeatureSection />
+      <EventSection />
       <ClubSection />
       <OrganismSection />
       <PartenaireSection />
