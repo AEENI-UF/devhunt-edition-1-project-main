@@ -9,6 +9,7 @@ import Aeeni from "../../assets/logo/logo.png";
 import AeeniDark from "../../assets/logo/aeeni-light.png";
 import { Home } from "@mui/icons-material";
 import { AppBar, Toolbar } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 export const NAVIGATION_HEIGHT = "4rem";
 
@@ -17,31 +18,10 @@ const GridFlex = styled(Grid)(({ theme }) => ({
   alignItems: "center",
   marginRight: 10,
 }));
-
-const SECTIONS = [
-  {
-    key: "Home",
-    icon: <Home />,
-  },
-  {
-    key: "Clubs",
-    icon: <Home />,
-  },
-  {
-    key: "Events",
-    icon: <Home />,
-  },
-  {
-    key: "Parteners",
-    icon: <Home />,
-  },
-  {
-    key: "Organism",
-    icon: <Home />,
-  },
-];
+  
 
 const Logo = () => {
+
   const theme = useTheme();
   return (
     <Box sx={{ pt: { xs: 1.5, md: 0 } }}>
@@ -55,6 +35,30 @@ const Logo = () => {
 };
 
 export function Navigation() {
+  const {t}=useTranslation();
+  
+  const SECTIONS = [
+    {
+      key: t("HOME_NAV"),
+      icon: <Home />,
+    },
+    {
+      key: t("CLUBS_NAV"),
+      icon: <Home />,
+    },
+    {
+      key: t("EVENTS_NAV"),
+      icon: <Home />,
+    },
+    {
+      key: t("PARNTENERS_NAV"),
+      icon: <Home />,
+    },
+    {
+      key:t("ORGANISM_NAV"),
+      icon: <Home />,
+    },
+  ];
   const { scrollY } = useViewportScroll();
   const theme = useTheme();
 
@@ -159,7 +163,7 @@ export function Navigation() {
 
             <GridFlex item>
               <Button variant="contained" color="secondary">
-                Contact us
+               { t("CONTACT_US")}
               </Button>
             </GridFlex>
           </Grid>
