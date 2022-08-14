@@ -78,7 +78,7 @@ export default function EventSection() {
                             <Grid key={i} item xs={4}>
                             <img
                                 src={ImageTab[i]}
-                                style={{
+                                style={{objectFit:"cover",
                                 width: "25vw",
                                 height: "200px",
                                 borderRadius: "13px",
@@ -149,6 +149,7 @@ export default function EventSection() {
                       src={ImageTab[i]}
                       style={{
                         width: "25vw",
+                        objectFit:"cover",
                         height: "200px",
                         borderRadius: "13px",
                         boxShadow: "2px 3px 3px 3px #eaeaea"
@@ -237,7 +238,8 @@ export default function EventSection() {
                     <Grid key={i} item xs={12}>
                         <img
                         alt='image description'
-                        style={{ width: "100%", height: "auto", borderRadius: "13px" }}
+                        style={{ width: "100%", height: "auto", borderRadius: "13px" ,
+                        objectFit:"cover",}}
                         src={ImageTab[i]} />
                     </Grid>
                     <Grid item xs={12} sx={{ paddingLeft: "48px" }}>
@@ -294,7 +296,8 @@ export default function EventSection() {
             <Grid key={i} item xs={12}>
               <img
                 alt='image description'
-                style={{ width: "100%", height: "auto", borderRadius: "13px" }}
+                style={{ width: "100%", height: "auto", borderRadius: "13px",
+                objectFit:"cover", }}
                 src={ImageTab[i]} />
             </Grid>
             <Grid item xs={12} sx={{ paddingLeft: "48px" }}>
