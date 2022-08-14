@@ -12,6 +12,10 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
 import PROFILE_PRESIDENT from "../../assets/images/profile-president.jpg";
+import PROFILE_ELDINOH from "../../assets/images/eldinoh-laurice.jpg";
+import PROFILE_PRISCA from "../../assets/images/prisca-tiana.jpg";
+import PROFILE_NIAIKO from "../../assets/images/niaiko-ralaivao.jpg";
+import PROFILE_NOROFANEVA from "../../assets/images/norofaneva.jpg";
 
 export function OrganismSection() {
   const { t } = useTranslation();
@@ -28,22 +32,22 @@ export function OrganismSection() {
     {
       name: "Rafanomezantsoa Eldinoh Laurice",
       post: t("COMPETITION_MANAGER"),
-      url: "",
+      url: PROFILE_ELDINOH,
     },
     {
       name: "Rakotozafy Prisca Tiana",
       post: t("FINANCIAL_CONTROLLER"),
-      url: "",
+      url: PROFILE_PRISCA,
     },
     {
       name: "Ralaivao Niaiko Michaël",
       post: t("COMPETITION_MANAGER"),
-      url: "",
+      url: PROFILE_NIAIKO,
     },
     {
       name: "Rakotomanana Norofaneva Miarimbola",
       post: t("TREASURER"),
-      url: "",
+      url: PROFILE_NOROFANEVA,
     },
   ];
 
@@ -100,11 +104,14 @@ export function OrganismSection() {
                       scale: 1,
                       once: true,
                     }}
+                    whileHover={{
+                      scale: 1.05,
+                    }}
                     viewport={{
                       once: true,
                     }}
                     transition={{
-                      duration: 0.7,
+                      duration: 0.3,
                     }}
                     item
                     xs={12}
@@ -247,6 +254,11 @@ function MemberCard(member) {
         borderRadius: "1rem",
         backgroundColor:
           theme.palette.mode === "dark" ? "#fff" : "secondary.main",
+        "&:hover": {
+          scale: "105%",
+          boxShadow: "1px 1px 50% #000",
+        },
+        transitionDuration: "0.3s",
       }}
     >
       <Stack
