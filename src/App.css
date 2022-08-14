@@ -1,6 +1,6 @@
 * {
   /* border: 0.5px solid red; */
-  /* color: #5d1924c7; */
+  color: #e6e5e5c7;
   filter: brightness();
 }
 
@@ -11,4 +11,37 @@ body {
 
 .link {
   text-decoration: none;
+}
+
+#hero-element-design-1 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 25px;
+  left: 10px;
+
+  border-radius: 50%;
+  filter: blur(180px);
+}
+
+#hero-element-design-2 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 25px;
+  left: 10px;
+
+  border-radius: 50%;
+  filter: blur(180px);
+}
+
+#group-path {
+  position: absolute;
+  width: 108%;
+  height: 100%;
+  transform: scale(0.7);
+  top: -1088px;
+  left: -109px;
+  opacity: 0.25;
+  background-repeat: no-repeat;
 }

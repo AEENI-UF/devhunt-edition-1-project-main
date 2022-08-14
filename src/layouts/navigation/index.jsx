@@ -4,7 +4,7 @@ import LangSelect from "./components/selectLang";
 import { motion, useViewportScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 import NavDrawer from "./drawer";
-import { SwicthComponent } from "./components";
+import { MaterialUISwitch, SwicthComponent } from "./components";
 import Aeeni from "../../assets/logo/logo.png";
 import AeeniDark from "../../assets/logo/aeeni-light.png";
 import { Home } from "@mui/icons-material";

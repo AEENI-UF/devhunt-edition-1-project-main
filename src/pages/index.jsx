@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import React from "react";
 import {
   ClubSection,
@@ -7,11 +8,18 @@ import {
   FeatureSection,
 } from "../sections/home";
 import { PartenaireSection } from "../sections/home/partener.section";
+import Group from "../assets/Group.png";
 
 // mui custom font
 export default function Home() {
   return (
-    <div>
+    <div style={{ position: "relative" }}>
+      <Box
+        id="group-path"
+        sx={{
+          backgroundImage: `url(${Group})`,
+        }}
+      ></Box>
       <ContentHero />
       <FeatureSection />
       <EventSection />

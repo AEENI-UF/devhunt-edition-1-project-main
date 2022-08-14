@@ -93,7 +93,7 @@ export function ClubSection() {
       sx={{
         width: "100%",
         px: { xs: 0, sm: 2, md: 5, lg: 15 },
-        my: { lg: 20 },
+        my: { xs: 10, lg: 20 },
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -101,9 +101,16 @@ export function ClubSection() {
       }}
     >
       <Typography
-        variant="h3"
+        variant="h2"
         color="text.primary"
-        sx={{ mb: 5, fontSize: { xs: 40, sm: 45, lg: 60 } }}
+        sx={{
+          fontWeight: "bold",
+          marginBottom: "43px",
+          marginTop: "94px",
+          textAlign: { xs: " left", lg: "center" },
+          position: "relative",
+          left: { xs: -35, md: 0 },
+        }}
       >
         {t("CLUB_SECTION_TITLE")}
       </Typography>

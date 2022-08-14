@@ -1,6 +1,7 @@
 import * as React from "react";
 import {
   Box,
+  Divider,
   Drawer,
   IconButton,
   List,
@@ -10,9 +11,10 @@ import {
 } from "@mui/material";
 import { Close, Menu } from "@mui/icons-material";
 import { useTheme } from "@emotion/react";
-import { SwicthComponent } from "../components";
+import { MaterialUISwitch, SwicthComponent } from "../components";
 import { useCycle } from "framer-motion";
 import LangSelect from "../components/selectLang";
+import { ColorModeContext } from "../../../config/theme.js";
 
 const container = {
   show: {
@@ -39,7 +41,8 @@ const item = {
 const NavDrawer = ({ sections }) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const theme = useTheme();
-
+  const colorMode = React.useContext(ColorModeContext);
+  const ref = React.useRef(null);
   return (
     <div>
       <IconButton
@@ -64,14 +67,17 @@ const NavDrawer = ({ sections }) => {
           </Box>
           <List>
             {sections.map((section) => (
-              <ListItemButton key={`w-${section.key}`}>
-                <ListItemText> {section.key}</ListItemText>
-              </ListItemButton>
+              <>
+                <ListItemButton key={`w-${section.key}`}>
+                  <ListItemText> {section.key}</ListItemText>
+                </ListItemButton>
+                <Divider />
+              </>
             ))}
-            <ListItem>
+            <ListItemButton>
               <ListItemText>Dark mode</ListItemText>
               <SwicthComponent />
-            </ListItem>
+            </ListItemButton>
             <ListItem>
               <ListItemText>Choose a language</ListItemText>
               <LangSelect />

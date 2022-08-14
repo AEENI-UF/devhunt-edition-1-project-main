@@ -1,6 +1,10 @@
-import { Grid, Stack, Typography } from "@mui/material";
+import { Box, Grid, Stack, Typography, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
+import Comm from "../../assets/comm.png";
+import Finance from "../../assets/FINANCE.png";
+import Help from "../../assets/help.png";
+import Activity from "../../assets/acticity.png";
 
 const container = {
   show: {
@@ -29,6 +33,7 @@ const item = {
 };
 
 export function FeatureSection() {
+  const theme = useTheme();
   const scrollRef = useRef(null);
   const viewportConfig = {
     // once: true,
@@ -40,20 +45,24 @@ export function FeatureSection() {
       title: "Facilité de communication",
       content:
         "Nous facilitons la communication et le partage d'information entre étudiants et enseignements",
+      icon: Comm,
     },
     {
       title: "Aide aux Edutiants ",
       content: "Nous aidons les étudiants dans sa vie en étant auprèsd'eux",
+      icon: Help,
     },
     {
       title: "Activités frequentes",
       content:
         "Nous organisons des diverses activites pour hausser le niveau des étudiants",
+      icon: Activity,
     },
     {
       title: "Gestion des finances",
       content:
         "Nous gérons la finance au cotés de l'administration de l'établissement",
+      icon: Finance,
     },
   ];
   return (
@@ -113,7 +122,16 @@ export function FeatureSection() {
         item
         lg={7}
         ref={scrollRef}
+        style={{ position: "relative" }}
       >
+        <Box
+          id="hero-element-design-2"
+          sx={{
+            bgcolor: `${
+              theme.palette.mode === "light" ? "#ffc2ccc7" : "#e6074fbf"
+            }`,
+          }}
+        ></Box>
         {FEATURES.map((feature, i) => (
           <Grid
             item
@@ -133,18 +151,15 @@ export function FeatureSection() {
                 maxWidth: "16rem",
               }}
             >
-              <motion.div
+              <motion.img
+                src={feature.icon}
                 variants={item}
                 initial="hide"
                 whileInView="show"
                 viewport={viewportConfig}
-                style={{
-                  width: "60px",
-                  height: "60px",
-                  borderRadius: "50%",
-                  backgroundColor: "red",
-                }}
-              ></motion.div>
+                alt=""
+                style={{ width: "80px", height: "80px" }}
+              />
               <Typography
                 variant="h5"
                 fontWeight="bold"

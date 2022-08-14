@@ -5,9 +5,20 @@ import WordHero from "../../components/Hero/WordHero";
 import TheButton from "../../components/Button";
 import AOS from "aos";
 import "../../../node_modules/aos/dist/aos.css";
+import Group from "../../assets/Group.png";
 
 AOS.init();
+/*
+    position: absolute;
+    background-size: cover;
+    width: 665px;
+    height: 1064px;
+    top: -83px;
+    left: 40px;
+    background-image: url(/static/media/Group.0d4c3db….png);
+    z-index: 7;
 
+*/
 export function ContentHero() {
   return (
     <>
@@ -28,7 +39,7 @@ export function ContentHero() {
               <Image />
             </Grid>
           </Grid>
-        </Box>
+        </Box>{" "}
       </Container>
 
       {/* content Responsive */}

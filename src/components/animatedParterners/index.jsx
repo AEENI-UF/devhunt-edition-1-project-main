@@ -279,7 +279,7 @@ export default function AnimatedPartenersCard() {
             height: "200vh",
             overflow: "hidden",
             position: "absolute",
-            border: "dotted",
+            // border: "dotted",
             display: "flex",
             justifyContent: "center",
           }}
