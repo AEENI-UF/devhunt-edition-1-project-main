@@ -30,7 +30,7 @@ export default function EventSection() {
     const ImageTab = [
         Logo1 , Logo2 , Logo3 , Logo4,Logo5
     ]
-    const dateTab =["13-14 Aout 2022","23 juillet 2022","5 fevrier 2022","26-27 mai 2022 ","19 Mars 2022"];
+    const dateTab =["13 - 14 Aout 2022","23 juillet 2022","5 fevrier 2022","26-27 mai 2022 ","19 Mars 2022"];
 
   const ContentTab = [
       t("DEV_HUNT_ED1_DESCRIPTION"),
@@ -94,7 +94,7 @@ export default function EventSection() {
                             data-aos-easing='ease-out-cubic'
                             data-aos-duration='6000'
                             >
-                            <Box sx={{ height: "100%" }}>
+                            <Box sx={{ height: "100%"}}>
                                 <Typography
                                 variant="h6"
                                 color="primary.main"
@@ -107,9 +107,9 @@ export default function EventSection() {
                                 {ContentTab[i]}
                                 </Typography>
                                 <Typography
-                                style={{ marginTop: "13px" }}
+                                style={{ marginTop: "20px" }}
                                 variant="subtitle1"
-                                color="black">
+                                color="text.primary">
                                 {
                                   dateTab[i]
                                 }
@@ -179,6 +179,7 @@ export default function EventSection() {
                       </Typography>
                       <Typography
                         variant="subtitle1"
+                        style={{marginTop:"20px"}}
                         color="text.primary">
                         {
                           dateTab[i]
@@ -240,11 +241,11 @@ export default function EventSection() {
                         style={{ width: "100%", height: "auto", borderRadius: "13px" }}
                         src={ImageTab[i]} />
                     </Grid>
-                    <Grid item xs={12} sx={{ paddingLeft: "48px" }}>
+                    <Grid item xs={12}>
                         <Typography
                         variant="h6"
                         color="primary.main"
-                        style={{ fontWeight: "bold", marginBottom: "12px" }}
+                        style={{ fontWeight: "bold", marginBottom: "12px",marginLeft:"23px" }}
                         >
                         {
                             TitleContentTab[i]
@@ -253,7 +254,7 @@ export default function EventSection() {
                         <Typography
                         variant="subtitle1"
                         color="text.primary"
-                        style={{ marginBottom: "12px" }}
+                        style={{ marginBottom: "12px" ,marginLeft:"23px"}}
                         >
                         {
                             ContentTab[i]
@@ -261,6 +262,7 @@ export default function EventSection() {
                         </Typography>
                         <Typography
                         variant="subtitle1"
+                        style={{marginTop:"20px",marginLeft:"23px"}}
                         color="text.primary">
                         {
                           dateTab[i]
@@ -297,11 +299,11 @@ export default function EventSection() {
                 style={{ width: "100%", height: "auto", borderRadius: "13px" }}
                 src={ImageTab[i]} />
             </Grid>
-            <Grid item xs={12} sx={{ paddingLeft: "48px" }}>
+            <Grid item xs={12}>
               <Typography
                 variant="h6"
                 color="primary.main"
-                style={{ fontWeight: "bold", marginBottom: '12px' }}
+                sx={{ fontWeight: "bold", marginBottom: '12px',marginLeft:"23px" }}
               >
                 {
                     TitleContentTab[i]
@@ -310,7 +312,7 @@ export default function EventSection() {
               <Typography
                 variant="subtitle1"
                 color="text.primary"
-                style={{ marginBottom: "12px" }}
+                style={{ marginBottom: "12px" ,marginLeft:"23px"}}
               >
                 {
                     ContentTab[i]
@@ -318,6 +320,7 @@ export default function EventSection() {
               </Typography>
               <Typography
                 variant="subtitle1"
+                style={{marginTop:"20px",marginLeft:"23px"}}
                 color="text.primary">
                 {
                   dateTab[i]

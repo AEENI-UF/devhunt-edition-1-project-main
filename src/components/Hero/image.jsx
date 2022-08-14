@@ -4,11 +4,11 @@ import {
   Grid,
 } from '@mui/material';
 import Rosa from '../../assets/images/Rosa.jpg';
-import Lanja from '../../assets/images/Lanja.jpg';
 import Membre from '../../assets/images/membre.jpg';
 import Eldinoh from '../../assets/images/Eldinoh.jpg';
 import Tinah from '../../assets/images/Tinah.jpg'
 import { makeStyles } from '@mui/styles';
+import Eni from '../../assets/images/eni.jpg';
 import AOS from 'aos';
 import '../../../node_modules/aos/dist/aos.css';
 
@@ -20,10 +20,11 @@ const useStyles = makeStyles({
     height: "300px !important",
     position: "absolute !important",
     borderRadius: "13px !important",
-    left: "161px",
+    left: "50px",
     top: "45px",
     boxShadow: "0px 3px 3px 3px rgba(0, 0, 0, 0.301) !important",
-    zIndex: 1
+    zIndex:99
+    
   }
 })
 
@@ -71,10 +72,16 @@ export default function Image() {
                   data-aos-easing='ease-out-cubic'
                   data-aos-duration='4000' 
                   />
-              </Grid>
-              <Grid item xs={12}>
+                  
                 <img
-                  style={{ width: "222px", height: "265px", marginTop: "200px", borderRadius: "13px", marginLeft: "170px", zIndex: 0.1 }}
+                  style={{
+                      position:'relative',
+                        zIndex:0.1,
+                      width: "222px"
+                      , height: "265px"
+                      , marginTop: "200px",
+                        borderRadius: "13px",
+                        marginLeft: "170px"}}
                   src={Tinah}
                   alt="alt"
                   data-aos='fade-left'
@@ -91,9 +98,9 @@ export default function Image() {
 
       <Box sx={{ display: { xs: "flex", sm: "flex", md: "none" } }}>
         <img
-          style={{ width: "100%", height: "241px", borderRadius: "0 0 13px 13px", marginBottom: "4vw" }}
+          style={{ width: "100%", height: "23%", borderRadius: "0 0 13px 13px", marginBottom: "4vw" }}
           alt="alt"
-          src={Lanja}
+          src={Eni}
 
           data-aos='fade-up'
           data-aos-easing='ease-out-cubic'
