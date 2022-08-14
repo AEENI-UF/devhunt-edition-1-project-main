@@ -98,7 +98,11 @@ export default function Image() {
 
       <Box sx={{ display: { xs: "flex", sm: "flex", md: "none" } }}>
         <img
-          style={{ width: "100%", height: "23%", borderRadius: "0 0 13px 13px", marginBottom: "4vw" }}
+          style={{ 
+            width: "100%",
+             height: "23%",
+              borderRadius: "0 0 13px 13px",
+             marginBottom: "4vw" }}
           alt="alt"
           src={Eni}
 

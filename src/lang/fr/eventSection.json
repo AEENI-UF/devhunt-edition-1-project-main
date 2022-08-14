@@ -1,9 +1,15 @@
 {
-    "EVENT_SECTION_TITLE": "Evénements",
+    "EVENT_SECTION_TITLE": "Nos Recent Activités",
     "DEV_HUNT_ED1_DESCRIPTION": "Compétition organisée par l’AEENI en vue de promouvoir les compétences des étudiants à concevoir et administrer une application Web.",
+    "DEV_HUNT_ED1_DATE":"13 - 14 Aout 2022",
     "RNC_DESCRIPTION": "Concours d’algorithmes organisé par le club C2E et AlgoMada, un partenaire de l'AEENI.",
+    "RNC_DATE":"23 juillet 2022",
     "ALGO_COMPETE_L1_ED1": "Concours d’algorithmes pour les étudiants de niveau L1. Cet concours a initialisé par l'AEENI afin de promouvoir l'utilisation de l'algorithme.",
+    "ALGO_COMPETE_DATE":"5 fevrier 2022",
     "INTERNAL_HACKATHON_HIU_DESCRIPTION": "Compétition interne afin de sélectionner les représentants de l'ENI pour l’Hackathon Inter-Universitaire 2022.",
+    "INTERNAL_HACKATHON_HIU_DATE":"26 - 27 mai 2022",
     "WFNC_ED1_DESCRIPTION": "Concours d’algorithmes spécialement pour les filles, et organisé par le club C2E, en partenariat avec AlgoMada.",
-    "SHOW_MORE_EVENT": "Show more"
+    "WFNC_ED1_DATE":"19 Mars 2022",
+    "SHOW_MORE_EVENT": "Show more",
+    "SHOW_LESS_EVENT":"Show less"
 }
