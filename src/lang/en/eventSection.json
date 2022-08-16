@@ -1,15 +1,15 @@
 {
-    "EVENT_SECTION_TITLE": "Our Recent Activities",
+    "EVENT_SECTION_TITLE": "Our recent activities",
     "DEV_HUNT_ED1_DESCRIPTION": "Competition organized by AEENI to promote students' skills in designing and administering a Web application.",
-    "DEV_HUNT_ED1_DATE":"13 - 14 Auguste, 2022",
+    "DEV_HUNT_ED1_DATE":"13 - 14 August, 2022",
     "RNC_DESCRIPTION": "An algorithm competition organized by the C2E club and AlgoMada, an AEENI partner.",
-    "RNC_DATE":"23 july, 2022",
+    "RNC_DATE":"23 July, 2022",
     "ALGO_COMPETE_L1_ED1": "Algorithm competition for L1 level students. This competition was initiated by AEENI to promote the use of the algorithm.",
-    "ALGO_COMPETE_DATE":"5 febroary, 2022",
+    "ALGO_COMPETE_DATE":"5 February, 2022",
     "INTERNAL_HACKATHON_HIU_DESCRIPTION": "Internal competition to select ENI representatives for the 2022 Inter-University Hackathon",
-    "INTERNAL_HACKATHON_HIU_DATE":"26 - 27 may, 2022",
+    "INTERNAL_HACKATHON_HIU_DATE":"26 - 27 May, 2022",
     "WFNC_ED1_DESCRIPTION": "Algorithm contest especially for girls, and organized by the C2E club, in partnership with AlgoMada.",
-    "WFNC_ED1_DATE":"19 March 2022",
-    "SHOW_MORE_EVENT": "Afficher plus",
-    "SHOW_LESS_EVENT": "Afficher moins"
+    "WFNC_ED1_DATE":"19 March, 2022",
+    "SHOW_MORE_EVENT": "Show more",
+    "SHOW_LESS_EVENT": "Show less"
 }

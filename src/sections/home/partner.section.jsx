@@ -13,7 +13,12 @@ const Flex = styled(Box)(({ theme }) => ({
 export function PartenaireSection() {
   const { t } = useTranslation();
   return (
-    <Box my={10} id="partner">
+    <Box
+      id="partner"
+      sx={{
+        py: "7rem",
+      }}
+    >
       <Flex>
         <Typography variant="h2" fontWeight="bold" color="text.primary">
           {t("PARTNER_SECTION_TITLE")}

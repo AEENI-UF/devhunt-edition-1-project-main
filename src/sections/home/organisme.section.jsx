@@ -64,7 +64,7 @@ export function OrganismSection() {
   return (
     <Box
       sx={{
-        py: 10,
+        py: "6rem",
       }}
       id="organism"
     >

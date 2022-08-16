@@ -95,15 +95,33 @@ export function Footer() {
   ];
 
   const CLUB_LINKS = [
-    { name: "C2E", url: "https://facebook.com/groups/entraide.mg/" },
-    { name: "C3LF", url: "https://facebook.com/groups/46262023721/" },
+    {
+      name: "C2E",
+      type: "link",
+      url: "https://facebook.com/groups/entraide.mg/",
+    },
+    {
+      name: "C3LF",
+      type: "link",
+      url: "https://facebook.com/groups/46262023721/",
+    },
     {
       name: "ENI Cybersecurity",
+      type: "link",
       url: "https://facebook.com/groups/1783240761737039/",
     },
     {
       name: "Multimedia",
+      type: "link",
       url: "https://facebook.com/groups/ClubMultimediaENI",
+    },
+    {
+      name: "EPC",
+      type: "text",
+    },
+    {
+      name: "ECP",
+      type: "text",
     },
   ];
 
@@ -265,43 +283,75 @@ export function Footer() {
                     pt: 0,
                   }}
                 >
-                  {CLUB_LINKS.map((link, i) => (
-                    <ListItemText key={i}>
-                      <Typography
-                        component={motion.a}
-                        href={link.url}
-                        alt={`link to ${link.name}`}
-                        target="_blank"
-                        sx={{
-                          color: "primary.contrastText",
-                          textDecoration: "none",
-                          fontSize: {
-                            xs: "1rem",
-                            sm: "1.3rem",
-                          },
-                          whiteSpace: "nowrap",
-                          "&:hover": {
-                            color: "gold",
-                          },
-                        }}
-                        initial={{
-                          opacity: 0,
-                          y: 100,
-                        }}
-                        animate={{
-                          opacity: 1,
-                          y: 0,
-                        }}
-                        transition={{
-                          delay: `0.${i * 3}`,
-                          duration: 0.8,
-                          type: "tween",
-                        }}
-                      >
-                        {link.name}
-                      </Typography>
-                    </ListItemText>
-                  ))}
+                  {CLUB_LINKS.map((club, i) => {
+                    return club.type === "link" ? (
+                      <ListItemText key={i}>
+                        <Typography
+                          component={motion.a}
+                          href={club.url}
+                          alt={`link to ${club.name}`}
+                          target="_blank"
+                          sx={{
+                            color: "primary.contrastText",
+                            textDecoration: "none",
+                            fontSize: {
+                              xs: "1rem",
+                              sm: "1.3rem",
+                            },
+                            whiteSpace: "nowrap",
+                            "&:hover": {
+                              color: "gold",
+                            },
+                          }}
+                          initial={{
+                            opacity: 0,
+                            y: 100,
+                          }}
+                          animate={{
+                            opacity: 1,
+                            y: 0,
+                          }}
+                          transition={{
+                            delay: `0.${i * 3}`,
+                            duration: 0.8,
+                            type: "tween",
+                          }}
+                        >
+                          {club.name}
+                        </Typography>
+                      </ListItemText>
+                    ) : (
+                      <ListItemText key={i}>
+                        <Typography
+                          component={motion.span}
+                          sx={{
+                            color: "primary.contrastText",
+                            textDecoration: "none",
+                            fontSize: {
+                              xs: "1rem",
+                              sm: "1.3rem",
+                            },
+                            whiteSpace: "nowrap",
+                          }}
+                          initial={{
+                            opacity: 0,
+                            y: 100,
+                          }}
+                          animate={{
+                            opacity: 1,
+                            y: 0,
+                          }}
+                          transition={{
+                            delay: `0.${i * 3}`,
+                            duration: 0.8,
+                            type: "tween",
+                          }}
+                        >
+                          {club.name}
+                        </Typography>
+                      </ListItemText>
+                    );
+                  })}
                 </List>
               </Grid>
               <Grid
