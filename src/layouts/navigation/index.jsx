@@ -4,13 +4,11 @@ import LangSelect from "./components/selectLang";
 import { motion, useViewportScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 import NavDrawer from "./drawer";
-import { MaterialUISwitch, SwicthComponent } from "./components";
-import Aeeni from "../../assets/logo/logo.png";
-import AeeniDark from "../../assets/logo/aeeni-light.png";
-import { Home } from "@mui/icons-material";
+import { SwicthComponent } from "./components";
+import Aeeni from "../../assets/logos/logo-aeeni-with-text-dark.png";
+import AeeniDark from "../../assets/logos/logo-aeeni-with-text-light.png";
 import { AppBar, Toolbar } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 
 export const NAVIGATION_HEIGHT = "4rem";
 
@@ -51,7 +49,7 @@ export function Navigation() {
     },
     {
       key: t("PARNTENERS_NAV"),
-      id: "partener",
+      id: "partner",
     },
     {
       key: t("ORGANISM_NAV"),

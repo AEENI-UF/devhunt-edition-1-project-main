@@ -1,4 +1,4 @@
-export * from "./partener.section";
+export * from "./partner.section";
 export * from "./club.section";
 export * from "./event.section";
 export * from "./hero.section";

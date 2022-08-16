@@ -8,11 +8,11 @@ import {
   Container,
   useTheme,
 } from "@mui/material";
-import Logo1 from "../../assets/Events/devhunt.jpg";
-import Logo2 from "../../assets/Events/Rnc.jpg";
-import Logo3 from "../../assets/Events/algo.jpg";
-import Logo4 from "../../assets/Events/HI.jpg";
-import Logo5 from "../../assets/Events/wfnc.jpg";
+import Logo1 from "../../assets/images/illustrations/illustration-devhunt.jpg";
+import Logo2 from "../../assets/images/illustrations/illustration-rnc.jpg";
+import Logo3 from "../../assets/images/illustrations/illustration-algo.jpg";
+import Logo4 from "../../assets/images/illustrations/illustration-hi.jpg";
+import Logo5 from "../../assets/images/illustrations/illustration-wfnc.jpg";
 import { useTranslation } from "react-i18next";
 import { ExpandMore, ExpandLess } from "@mui/icons-material";
 import AOS from "aos";
@@ -105,7 +105,7 @@ export function EventSection() {
                     data-aos="fade-right"
                     data-aos-easing="ease-out-cubic"
                     data-aos-duration="6000"
-                    alt="test"
+                    alt=""
                   />
                 </Grid>
                 <Grid
@@ -172,7 +172,7 @@ export function EventSection() {
                           : "rgba(0, 0, 0, 0.309)"
                       }`,
                     }}
-                    alt="test"
+                    alt=""
                   />
                 </Grid>
                 <Grid
@@ -241,7 +241,7 @@ export function EventSection() {
             <>
               <Grid key={i} item xs={12}>
                 <img
-                  alt="image description"
+                  alt="description"
                   style={{
                     width: "100%",
                     height: "80vw",
@@ -293,7 +293,7 @@ export function EventSection() {
             <>
               <Grid key={i} item xs={12}>
                 <img
-                  alt="image description"
+                  alt="description"
                   style={{
                     width: "100%",
                     height: "auto",

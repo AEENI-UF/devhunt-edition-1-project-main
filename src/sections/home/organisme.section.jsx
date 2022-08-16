@@ -11,11 +11,11 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
-import PROFILE_PRESIDENT from "../../assets/images/profile-president.jpg";
-import PROFILE_ELDINOH from "../../assets/images/eldinoh-laurice.jpg";
-import PROFILE_PRISCA from "../../assets/images/prisca-tiana.jpg";
-import PROFILE_NIAIKO from "../../assets/images/niaiko-ralaivao.jpg";
-import PROFILE_NOROFANEVA from "../../assets/images/norofaneva.jpg";
+import PROFILE_PRESIDENT from "../../assets/images/profiles/profile-rosa.jpg";
+import PROFILE_ELDINOH from "../../assets/images/profiles/profile-eldinoh-laurice.jpg";
+import PROFILE_PRISCA from "../../assets/images/profiles/profile-prisca-tiana.jpg";
+import PROFILE_NIAIKO from "../../assets/images/profiles/profile-niaiko-ralaivao.jpg";
+import PROFILE_NOROFANEVA from "../../assets/images/profiles/profile-norofaneva.jpg";
 
 export function OrganismSection() {
   const { t } = useTranslation();

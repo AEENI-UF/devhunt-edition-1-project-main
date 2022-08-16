@@ -7,8 +7,8 @@ import {
   OrganismSection,
   FeatureSection,
 } from "../sections/home";
-import { PartenaireSection } from "../sections/home/partener.section";
-import Group from "../assets/Group.png";
+import { PartenaireSection } from "../sections/home/partner.section";
+import Group from "../assets/images/illustrations/illustration-group.png";
 
 // mui custom font
 export default function Home() {

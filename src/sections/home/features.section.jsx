@@ -1,10 +1,10 @@
 import { Box, Grid, Stack, Typography, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
-import Comm from "../../assets/comm.png";
-import Finance from "../../assets/FINANCE.png";
-import Help from "../../assets/help.png";
-import Activity from "../../assets/acticity.png";
+import Comm from "../../assets/images/illustrations/illustration-communication.png";
+import Finance from "../../assets/images/illustrations/illustration-finance.png";
+import Help from "../../assets/images/illustrations/illustration-help.png";
+import Activity from "../../assets/images/illustrations/illustration-activity.png";
 import { useTranslation } from "react-i18next";
 
 const container = {

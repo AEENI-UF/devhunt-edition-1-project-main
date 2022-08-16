@@ -12,7 +12,7 @@ const FlexBox = styled(motion.div)(({ theme }) => ({
 }));
 
 export default function LangSelect() {
-  const [lang, setlang] = React.useState("Fr");
+  const [lang, setlang] = React.useState("fr");
   const theme = useTheme();
   return (
     <FlexBox>

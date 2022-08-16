@@ -18,6 +18,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Snow } from "../../components/particule/Snow";
+import LOGO_AEENI_WHITE from "../../assets/logos/logo-aeeni-white.png";
 
 const variants = {
   hide: {
@@ -163,7 +164,7 @@ export function Footer() {
                   <Grid item>
                     <Box
                       component="img"
-                      src={require("../../assets/logo/aeeni-white.png")}
+                      src={LOGO_AEENI_WHITE}
                       sx={{
                         width: "7rem",
                       }}

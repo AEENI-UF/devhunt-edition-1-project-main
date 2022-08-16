@@ -1,7 +1,7 @@
-import { Box, Container, Grid, Stack, Typography } from "@mui/material";
+import { Box, Grid, Stack, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
-import Akata from "../../assets/akata.jpg";
+import Akata from "../../assets/images/illustrations/illustration-akata.jpg";
 
 const ImageWidth = 180;
 
@@ -148,7 +148,7 @@ export default function C2E() {
 import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
-import Akata from "../../assets/akata.jpg";
+import Akata from "../../assets/images/illustrations/illustration-akata.jpg";
 
 const ImageWidth = 180;
 

@@ -1,23 +1,50 @@
-import Bg from "../../assets/akata.jpg";
 import { motion, AnimatePresence } from "framer-motion";
 import { Box, Typography, Button } from "@mui/material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const ClubCard = ({ index, club }) => {
+export const ClubCard = ({ club }) => {
   const [hovered, setHovered] = useState(false);
   const longName = club.name.length >= 30 ? 1 : 0;
   return (
     <>
-      <div style={{ position: "absolute", top: 30, left: 30, zIndex: 2 }}>
-        <img
-          src={club.logo}
-          alt=""
-          width={60}
-          height={60}
-          style={{ borderRadius: "50%" }}
-        />
-      </div>
+      {club.logo ? (
+        <div style={{ position: "absolute", top: 30, left: 30, zIndex: 2 }}>
+          <img
+            src={club.logo}
+            alt=""
+            width={60}
+            height={60}
+            style={{ borderRadius: "50%" }}
+          />
+        </div>
+      ) : (
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            position: "absolute",
+            backgroundColor: "#fff",
+            top: 30,
+            left: 30,
+            zIndex: 2,
+            width: 60,
+            height: 60,
+            borderRadius: "50%",
+          }}
+        >
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: "bold",
+              color: "#000",
+            }}
+          >
+            {club.initial || club.name[0]}
+          </Typography>
+        </Box>
+      )}
       <Box
         component={motion.div}
         sx={{
@@ -55,7 +82,8 @@ export const ClubCard = ({ index, club }) => {
           style={{ zIndex: 2, position: "absolute", padding: "0 1rem" }}
         >
           <Typography variant="h4" color="white" sx={{ textAlign: "start" }}>
-            {club.name} - {club.initial}
+            {club.name}
+            {club.initial && ` - ${club.initial}`}
           </Typography>
         </Box>
         {hovered && (

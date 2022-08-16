@@ -1,18 +1,18 @@
 import * as React from "react";
-import { Box, Grid, useTheme, useThemeProps } from "@mui/material";
-import Rosa from "../../assets/images/Rosa.jpg";
-import Membre from "../../assets/images/membre.jpg";
-import Eldinoh from "../../assets/images/Eldinoh.jpg";
-import Tinah from "../../assets/images/Tinah.jpg";
+import { Box, Grid, useTheme } from "@mui/material";
+import Rosa from "../../assets/images/illustrations/illustration-rosa.jpg";
+import Membres from "../../assets/images/illustrations/illustration-membres.jpg";
+import Eldinoh from "../../assets/images/illustrations/illustration-eldinoh.jpg";
+import Tinah from "../../assets/images/illustrations/illustration-tinah.jpg";
 import { makeStyles } from "@mui/styles";
-import Eni from "../../assets/images/eni.jpg";
+import ENI from "../../assets/images/illustrations/illustration-eni.jpg";
 import AOS from "aos";
 import "../../../node_modules/aos/dist/aos.css";
 
 AOS.init();
 
 const useStyles = makeStyles({
-  imge: {
+  image: {
     width: "250px !important",
     height: "300px !important",
     position: "absolute !important",
@@ -63,8 +63,8 @@ export default function Image() {
                     height: "139px",
                     borderRadius: "13px",
                   }}
-                  src={Membre}
-                  alt="alt"
+                  src={Membres}
+                  alt=""
                   data-aos="fade-right"
                   data-aos-easing="ease-out-cubic"
                   data-aos-duration="1000"
@@ -78,7 +78,7 @@ export default function Image() {
                     borderRadius: "13px",
                   }}
                   src={Eldinoh}
-                  alt="alt"
+                  alt=""
                   data-aos="fade-right"
                   data-aos-easing="ease-out-cubic"
                   data-aos-duration="2000"
@@ -89,9 +89,9 @@ export default function Image() {
             <Grid item xs={2.2}>
               <Grid item xs={12}>
                 <img
-                  className={classes.imge}
+                  className={classes.image}
                   src={Rosa}
-                  alt="alt"
+                  alt=""
                   data-aos="fade-up"
                   data-aos-easing="ease-out-cubic"
                   data-aos-duration="4000"
@@ -108,7 +108,7 @@ export default function Image() {
                     marginLeft: "170px",
                   }}
                   src={Tinah}
-                  alt="alt"
+                  alt=""
                   data-aos="fade-left"
                   data-aos-easing="ease-out-cubic"
                   data-aos-duration="1000"
@@ -127,8 +127,8 @@ export default function Image() {
             borderRadius: "0 0 13px 13px",
             marginBottom: "4vw",
           }}
-          alt="alt"
-          src={Eni}
+          alt=""
+          src={ENI}
           data-aos="fade-up"
           data-aos-easing="ease-out-cubic"
           data-aos-duration="1000"

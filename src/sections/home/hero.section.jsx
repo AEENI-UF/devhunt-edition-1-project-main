@@ -1,11 +1,10 @@
 import * as React from "react";
 import Image from "../../components/Hero/image";
-import { Box, Grid, Container, Typography } from "@mui/material";
+import { Box, Grid, Container } from "@mui/material";
 import WordHero from "../../components/Hero/WordHero";
 import TheButton from "../../components/Button";
 import AOS from "aos";
 import "../../../node_modules/aos/dist/aos.css";
-import Group from "../../assets/Group.png";
 
 AOS.init();
 /*
