@@ -68,7 +68,11 @@ export function EventSection() {
 
   return (
     <>
-      <Container id="event">
+      <Container id="event"
+      sx={{
+        py: "0.7rem"
+      }}
+      >
         <Typography
           variant="h2"
           color="text.primary"

@@ -180,7 +180,7 @@ const data3 = [
     logo: "",
   },
   {
-    partner: "WECours",
+    partner: "WeCours",
     description:
       "Per Tellus Turpis Eros Nibh Id Dolor Nulla Vivamus Conubia Malesuada Viverra.",
     cover: WecoursCover,
