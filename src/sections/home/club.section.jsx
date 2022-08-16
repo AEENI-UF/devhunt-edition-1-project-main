@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import Masonry from "@mui/lab/Masonry";
-import { styled, Paper, Box, Typography } from "@mui/material";
+import { styled, Paper, Box, Typography, Container } from "@mui/material";
 import { ClubCard } from "../../components/clubCard";
 
 import COVER_C3LF from "../../assets/images/clubs/cover-c3lf.jpg";
@@ -96,27 +96,29 @@ export function ClubSection() {
         alignItems: "center",
       }}
     >
-      <Typography
-        variant="h2"
-        color="text.primary"
-        sx={{
-          fontWeight: "bold",
-          marginBottom: "43px",
-          marginTop: "94px",
-          textAlign: { xs: " left", lg: "center" },
-          position: "relative",
-          px: 2,
-        }}
-      >
-        {t("CLUB_SECTION_TITLE")}
-      </Typography>
-      <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={2}>
-        {CLUBS.map((club, index) => (
-          <Item key={index} sx={{ height: club.height }}>
-            <ClubCard club={club} />
-          </Item>
-        ))}
-      </Masonry>
+      <Container>
+        <Typography
+          variant="h2"
+          color="text.primary"
+          sx={{
+            fontWeight: "bold",
+            marginBottom: "43px",
+            marginTop: "94px",
+            textAlign: { xs: " left", lg: "center" },
+            position: "relative",
+            px: 2,
+          }}
+        >
+          {t("CLUB_SECTION_TITLE")}
+        </Typography>
+        <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={2}>
+          {CLUBS.map((club, index) => (
+            <Item key={index} sx={{ height: club.height }}>
+              <ClubCard club={club} />
+            </Item>
+          ))}
+        </Masonry>
+      </Container>
     </Box>
   );
 }

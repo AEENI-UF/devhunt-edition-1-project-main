@@ -1,4 +1,11 @@
-import { Box, Grid, Stack, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Container,
+  Grid,
+  Stack,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import { motion } from "framer-motion";
 import React, { useRef } from "react";
 import Comm from "../../assets/images/illustrations/illustration-communication.png";
@@ -64,116 +71,43 @@ export function FeatureSection() {
     },
   ];
   return (
-    <Grid
-      container
-      sx={{ my: "7rem", px: { xs: "1rem", md: "8rem" } }}
-      id="features"
-    >
-      <Grid
-        item
-        lg={5}
-        component={motion.div}
-        variants={container}
-        initial="hide"
-        animate="show"
-        display={{ xs: "flex", md: "none" }}
-      >
-        <Stack
-          spacing={3}
-          sx={{
-            height: "100%",
-            alignItems: "center",
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "column",
-          }}
+    <Box>
+      <Container>
+        <Grid
+          container
+          sx={{ my: "7rem" /* px: { xs: "1rem", md: "rem" } */ }}
+          id="features"
         >
-          <Typography
-            variant="h3"
-            fontWeight={"bold"}
-            color="text.primary"
-            component={motion.h6}
-            variants={item}
-            initial="hide"
-            whileInView={"show"}
-            viewport={viewportConfig}
-          >
-            Quelles sont nos valeurs ?
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.primary"
-            component={motion.p}
-            variants={item}
-            initial="hide"
-            whileInView="show"
-            viewport={viewportConfig}
-          >
-            Egestas Praesent Ex Fames Class Aliquam. Consectetuer Eleifend
-            Conubia Suspendisse Enim Nibh Et Dapibus Fusce Pulvinar Maecenas
-            Quam.
-          </Typography>
-        </Stack>
-      </Grid>
-      <Grid
-        component={motion.div}
-        variants={container}
-        initial="hide"
-        animate="show"
-        container
-        item
-        lg={7}
-        ref={scrollRef}
-        style={{ position: "relative" }}
-      >
-        <Box
-          id="hero-element-design-2"
-          sx={{
-            bgcolor: `${
-              theme.palette.mode === "light" ? "#ffc2ccc7" : "#e6074fbf"
-            }`,
-          }}
-        ></Box>
-        {FEATURES.map((feature, i) => (
           <Grid
             item
-            lg={6}
-            key={i}
+            lg={5}
             component={motion.div}
             variants={container}
             initial="hide"
             animate="show"
+            display={{ xs: "flex", md: "none" }}
           >
             <Stack
-              component={motion.div}
-              spacing={2}
+              spacing={3}
               sx={{
-                px: 2,
-                py: 4,
-                maxWidth: "16rem",
+                height: "100%",
+                alignItems: "center",
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
               }}
             >
-              <motion.img
-                src={feature.icon}
-                variants={item}
-                initial="hide"
-                whileInView="show"
-                viewport={viewportConfig}
-                alt=""
-                style={{ width: "80px", height: "80px" }}
-              />
               <Typography
-                variant="h5"
-                fontWeight="bold"
+                variant="h3"
+                fontWeight={"bold"}
                 color="text.primary"
                 component={motion.h6}
                 variants={item}
                 initial="hide"
-                whileInView="show"
+                whileInView={"show"}
                 viewport={viewportConfig}
-                sx={{ fontWeight: 25 }}
               >
-                {feature.title}
+                Quelles sont nos valeurs ?
               </Typography>
               <Typography
                 variant="body1"
@@ -184,56 +118,133 @@ export function FeatureSection() {
                 whileInView="show"
                 viewport={viewportConfig}
               >
-                {feature.content}
+                Egestas Praesent Ex Fames Class Aliquam. Consectetuer Eleifend
+                Conubia Suspendisse Enim Nibh Et Dapibus Fusce Pulvinar Maecenas
+                Quam.
               </Typography>
             </Stack>
           </Grid>
-        ))}
-      </Grid>
-      <Grid
-        item
-        lg={5}
-        component={motion.div}
-        variants={container}
-        initial="hide"
-        animate="show"
-        display={{ xs: "none", md: "flex" }}
-      >
-        <Stack
-          spacing={3}
-          sx={{
-            height: "100%",
-            alignItems: "start",
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "column",
-          }}
-        >
-          <Typography
-            variant="h3"
-            fontWeight={"bold"}
-            color="text.primary"
-            component={motion.h6}
-            variants={item}
+          <Grid
+            component={motion.div}
+            variants={container}
             initial="hide"
-            whileInView={"show"}
-            viewport={viewportConfig}
+            animate="show"
+            container
+            item
+            lg={7}
+            ref={scrollRef}
+            style={{ position: "relative" }}
           >
-            {t("TITLE_OBJECTIF")}
-          </Typography>
-          <Typography
-            variant="body1"
-            color="text.primary"
-            component={motion.p}
-            variants={item}
+            <Box
+              id="hero-element-design-2"
+              sx={{
+                bgcolor: `${
+                  theme.palette.mode === "light" ? "#ffc2ccc7" : "#e6074fbf"
+                }`,
+              }}
+            ></Box>
+            {FEATURES.map((feature, i) => (
+              <Grid
+                item
+                lg={6}
+                key={i}
+                component={motion.div}
+                variants={container}
+                initial="hide"
+                animate="show"
+              >
+                <Stack
+                  component={motion.div}
+                  spacing={2}
+                  sx={{
+                    px: 2,
+                    py: 4,
+                    maxWidth: "16rem",
+                  }}
+                >
+                  <motion.img
+                    src={feature.icon}
+                    variants={item}
+                    initial="hide"
+                    whileInView="show"
+                    viewport={viewportConfig}
+                    alt=""
+                    style={{ width: "80px", height: "80px" }}
+                  />
+                  <Typography
+                    variant="h5"
+                    fontWeight="bold"
+                    color="text.primary"
+                    component={motion.h6}
+                    variants={item}
+                    initial="hide"
+                    whileInView="show"
+                    viewport={viewportConfig}
+                    sx={{ fontWeight: 25 }}
+                  >
+                    {feature.title}
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    color="text.primary"
+                    component={motion.p}
+                    variants={item}
+                    initial="hide"
+                    whileInView="show"
+                    viewport={viewportConfig}
+                  >
+                    {feature.content}
+                  </Typography>
+                </Stack>
+              </Grid>
+            ))}
+          </Grid>
+          <Grid
+            item
+            lg={5}
+            component={motion.div}
+            variants={container}
             initial="hide"
-            whileInView="show"
-            viewport={viewportConfig}
+            animate="show"
+            display={{ xs: "none", md: "flex" }}
           >
-            {t("DESCRIPTION_OBJECTIF")}
-          </Typography>
-        </Stack>
-      </Grid>
-    </Grid>
+            <Stack
+              spacing={3}
+              sx={{
+                height: "100%",
+                alignItems: "start",
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+              }}
+            >
+              <Typography
+                variant="h3"
+                fontWeight={"bold"}
+                color="text.primary"
+                component={motion.h6}
+                variants={item}
+                initial="hide"
+                whileInView={"show"}
+                viewport={viewportConfig}
+              >
+                {t("TITLE_OBJECTIF")}
+              </Typography>
+              <Typography
+                variant="body1"
+                color="text.primary"
+                component={motion.p}
+                variants={item}
+                initial="hide"
+                whileInView="show"
+                viewport={viewportConfig}
+              >
+                {t("DESCRIPTION_OBJECTIF")}
+              </Typography>
+            </Stack>
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
   );
 }
