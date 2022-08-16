@@ -1,6 +1,6 @@
 * {
   /* border: 0.5px solid red; */
-  /* color: #e6e5e5c7; */
+  /* color: #2b0101; */
   filter: brightness();
 }
 
@@ -35,13 +35,15 @@ body {
   filter: blur(180px);
 }
 
-#group-path {
+#blur-radial {
   position: absolute;
-  width: 108%;
-  height: 100%;
-  transform: scale(0.7);
-  top: -1088px;
-  left: -109px;
-  opacity: 0.25;
-  background-repeat: no-repeat;
+  top: 70%;
+  left: -25%;
+  bottom: 0;
+  width: 150%;
+  height: 80vw;
+  background-color: rgba(247, 131, 49, 0.601);
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: 0;
 }

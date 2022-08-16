@@ -2,10 +2,10 @@ import { Box } from "@mui/material";
 import React from "react";
 import {
   ClubSection,
-  ContentHero,
   EventSection,
   OrganismSection,
   FeatureSection,
+  ContentHero,
 } from "../sections/home";
 import { PartenaireSection } from "../sections/home/partner.section";
 import Group from "../assets/images/illustrations/illustration-group.png";
@@ -14,14 +14,12 @@ import Group from "../assets/images/illustrations/illustration-group.png";
 export default function Home() {
   return (
     <div style={{ position: "relative" }}>
-      <Box
-        id="group-path"
-        sx={{
-          backgroundImage: `url(${Group})`,
-        }}
-      ></Box>
-      <ContentHero />
-      <FeatureSection />
+      <Box sx={{ bgcolor: "#2b0101", pb: 0.1, position: "relative" }}>
+        {/* <div id="blur-radial"></div> */}
+        <ContentHero />
+        <FeatureSection />
+      </Box>
+
       <EventSection />
       <ClubSection />
       <OrganismSection />

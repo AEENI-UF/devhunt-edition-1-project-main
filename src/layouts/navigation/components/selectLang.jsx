@@ -27,11 +27,11 @@ export default function LangSelect() {
         sx={{
           "& .MuiSelect-select": {
             color:
-              theme.palette.mode === "dark"
+              theme.palette.mode !== "dark"
                 ? theme.palette.primary.main
                 : "white",
             border: `1px solid ${
-              theme.palette.mode === "dark"
+              theme.palette.mode !== "dark"
                 ? theme.palette.primary.main
                 : "white"
             }`,
@@ -39,7 +39,7 @@ export default function LangSelect() {
           },
           "& .MuiSvgIcon-root": {
             color:
-              theme.palette.mode === "dark"
+              theme.palette.mode !== "dark"
                 ? theme.palette.primary.main
                 : "white",
           },

@@ -16,7 +16,7 @@ i18n.use(initReactI18next).init({
 });
 
 function App() {
-  const [isDark, setDark] = React.useState(true);
+  const [isDark, setDark] = React.useState(false);
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {

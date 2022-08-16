@@ -9,7 +9,7 @@ const Path = (props) => {
       fill="transparent"
       strokeWidth="3"
       stroke={`${
-        theme.palette.mode === "light" ? "white" : theme.palette.secondary.main
+        theme.palette.mode !== "light" ? "white" : theme.palette.secondary.main
       }`}
       strokeLinecap="round"
       {...props}
