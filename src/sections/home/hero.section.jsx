@@ -74,6 +74,7 @@ const Background = styled(Box)(({ theme }) => ({
 }));
 
 const Slide = styled(Box)(({ theme }) => ({
+  backgroundImage: "linear-gradient(#100100,#fff0)",
   position: "absolute",
   width: "100%",
   height: "100%",
