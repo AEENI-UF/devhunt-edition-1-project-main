@@ -51,7 +51,7 @@ const NavDrawer = ({ sections }) => {
       >
         <Menu
           htmlColor={
-            theme.palette.mode === "light"
+            theme.palette.mode !== "light"
               ? "white"
               : theme.palette.primary.main
           }

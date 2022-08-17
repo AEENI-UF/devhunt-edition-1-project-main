@@ -147,7 +147,7 @@ export function FeatureSection() {
 
 const Feature = ({ feature, i }) => {
   const viewportConfig = {
-    margin: "320px",
+    // margin: "0px",
   };
   const COLORS = ["#00e5ff", "#00f798", "#0021f7", "#f700ce"];
   return (

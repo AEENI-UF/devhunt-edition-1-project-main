@@ -108,52 +108,55 @@ const duration = 140;
 export function ContentHero() {
   const { t } = useTranslation();
   return (
-    <Background>
-      <Slide>
-        <AnimatedStack>
-          {dataRow1.map((item) => (
-            <HeroCard key={item} item={item} />
-          ))}
-        </AnimatedStack>
+    <>
+      <div id="home"></div>
+      <Background>
+        <Slide>
+          <AnimatedStack>
+            {dataRow1.map((item) => (
+              <HeroCard key={item} item={item} />
+            ))}
+          </AnimatedStack>
 
-        <AnimatedStack reversed={true}>
-          {dataRow2.map((item) => (
-            <HeroCard key={item} item={item} />
-          ))}
-        </AnimatedStack>
-        <AnimatedStack>
-          {dataRow3.map((item) => (
-            <HeroCard key={item} item={item} />
-          ))}
-        </AnimatedStack>
-        <AnimatedStack reversed={true}>
-          {dataRow1.map((item) => (
-            <HeroCard key={item} item={item} />
-          ))}
-        </AnimatedStack>
-      </Slide>
-      <TextContainer sx={{ top: { xs: "40%", md: "50%" }, zIndex: 2 }}>
-        <Typography
-          variant="h2"
-          fontWeight={"bold"}
-          color="white"
-          sx={{
-            maxWidth: { xs: "300px", md: 600 },
-            fontSize: { xs: "3rem", md: "3.5rem" },
-          }}
-        >
-          {/* {feature.title} */}
-          {t("SLOGAN_AEENI")}
-        </Typography>
-        <Typography variant="h5" color="white">
-          {t("AEENI_DESCRIPTION")}
-        </Typography>
-        <Button variant="contained" color="secondary" size="large">
-          {t("CTA")}
-        </Button>
-      </TextContainer>
-      <Blur sx={{ height: "10rem", zIndex: 0 }} />
-    </Background>
+          <AnimatedStack reversed={true}>
+            {dataRow2.map((item) => (
+              <HeroCard key={item} item={item} />
+            ))}
+          </AnimatedStack>
+          <AnimatedStack>
+            {dataRow3.map((item) => (
+              <HeroCard key={item} item={item} />
+            ))}
+          </AnimatedStack>
+          <AnimatedStack reversed={true}>
+            {dataRow1.map((item) => (
+              <HeroCard key={item} item={item} />
+            ))}
+          </AnimatedStack>
+        </Slide>
+        <TextContainer sx={{ top: { xs: "40%", md: "50%" }, zIndex: 2 }}>
+          <Typography
+            variant="h2"
+            fontWeight={"bold"}
+            color="white"
+            sx={{
+              maxWidth: { xs: "90vw", md: 600 },
+              fontSize: { xs: "3rem", md: "3.5rem" },
+            }}
+          >
+            {/* {feature.title} */}
+            {t("SLOGAN_AEENI")}
+          </Typography>
+          <Typography variant="h5" color="white">
+            {t("AEENI_DESCRIPTION")}
+          </Typography>
+          <Button variant="contained" color="secondary" size="large">
+            {t("CTA")}
+          </Button>
+        </TextContainer>
+        <Blur sx={{ height: "10rem", zIndex: 0 }} />
+      </Background>
+    </>
   );
 }
 

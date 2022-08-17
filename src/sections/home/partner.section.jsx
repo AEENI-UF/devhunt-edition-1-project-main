@@ -17,6 +17,8 @@ const Flex = styled(Box)(({ theme }) => ({
   alignItems: "center",
   position: "relative",
   zIndex: 5,
+  // backgroundColor: "red",
+  borderRadius: 10,
 }));
 
 const PARTNERS = [
@@ -56,27 +58,27 @@ export function PartenaireSection() {
       }}
     >
       <Container>
-        <Flex>
-          <Box sx={{ width: "100%" }}>
+        <Flex sx={{ py: 5 }}>
+          <Box>
             <Typography variant="h2" fontWeight="bold" color="text.primary">
               {t("PARTNER_SECTION_TITLE")}
             </Typography>
           </Box>
 
-          <Grid container spacing={2}>
+          <Grid container spacing={3}>
             {PARTNERS.map((partner) => {
               return (
-                <Grid lg={3.5} spacing={2} container item>
-                  <Grid lg={3} item>
-                    <img
-                      src={partner.img}
-                      alt={partner.name}
-                      style={{ width: 80, height: 80, borderRadius: "50%" }}
-                    />
-                  </Grid>
-                  <Grid lg={9} item>
-                    <Typography variant="h4">{partner.name}</Typography>
-                  </Grid>
+                <Grid
+                  lg={4}
+                  item
+                  key={partner.name}
+                  sx={{ display: "flex", justifyContent: "center" }}
+                >
+                  <img
+                    src={partner.img}
+                    alt={partner.name}
+                    style={{ width: 80, height: 80, borderRadius: "50%" }}
+                  />
                 </Grid>
               );
             })}
