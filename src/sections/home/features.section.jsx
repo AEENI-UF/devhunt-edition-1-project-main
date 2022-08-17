@@ -41,7 +41,6 @@ const item = {
 
 export function FeatureSection() {
   const { t } = useTranslation();
-  const theme = useTheme();
   const scrollRef = useRef(null);
 
   const FEATURES = [
@@ -91,6 +90,7 @@ export function FeatureSection() {
             variant="h2"
             fontWeight={"bold"}
             color="white"
+            sx={{ fontSize: { xs: "3rem", md: "3.5rem" } }}
             // component={motion.h6}
             // variants={item}
             // initial="hide"
@@ -191,7 +191,11 @@ const Feature = ({ feature, i }) => {
         variant="h4"
         fontWeight="bold"
         color="white"
-        sx={{ fontWeight: 25, px: 3 }}
+        sx={{
+          fontWeight: 25,
+          px: 3,
+          zIndex: 2,
+        }}
       >
         {feature.title}
       </Typography>
@@ -199,7 +203,7 @@ const Feature = ({ feature, i }) => {
         variant="body1"
         color="white"
         viewport={viewportConfig}
-        sx={{ px: 3 }}
+        sx={{ px: 3, zIndex: 2 }}
       >
         {feature.content}
       </Typography>

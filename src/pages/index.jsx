@@ -14,7 +14,7 @@ import Group from "../assets/images/illustrations/illustration-group.png";
 export default function Home() {
   return (
     <div style={{ position: "relative" }}>
-      <Box sx={{ bgcolor: "#2b0101", pb: 0.1, position: "relative" }}>
+      <Box sx={{ bgcolor: "#2b0101", position: "relative" }}>
         {/* <div id="blur-radial"></div> */}
         <ContentHero />
         <FeatureSection />

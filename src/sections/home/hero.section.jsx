@@ -138,7 +138,8 @@ export function ContentHero() {
           fontWeight={"bold"}
           color="white"
           sx={{
-            fontSize: { xs: "3.3rem", md: "3.5rem" },
+            maxWidth: { xs: "300px", md: 600 },
+            fontSize: { xs: "3rem", md: "3.5rem" },
           }}
         >
           {/* {feature.title} */}
@@ -147,7 +148,9 @@ export function ContentHero() {
         <Typography variant="h5" color="white">
           {t("AEENI_DESCRIPTION")}
         </Typography>
-        <Button variant="contained">{t("CTA")}</Button>
+        <Button variant="contained" color="secondary" size="large">
+          {t("CTA")}
+        </Button>
       </TextContainer>
       <Blur sx={{ height: "10rem", zIndex: 0 }} />
     </Background>

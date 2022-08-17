@@ -157,9 +157,9 @@ export function Navigation() {
             <GridFlex>
               <LangSelect />
             </GridFlex>
-            <GridFlex item>
+            {/* <GridFlex item>
               <SwicthComponent />
-            </GridFlex>
+            </GridFlex> */}
 
             <GridFlex item>
               <Button variant="contained" color="secondary">

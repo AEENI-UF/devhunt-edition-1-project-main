@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export const ClubCard = ({ club }) => {
   const [hovered, setHovered] = useState(false);
-  const longName = club.name.length >= 30 ? 1 : 0;
+  const longName = club.name.length >= 34 ? 1 : 0;
   return (
     <>
       {club.logo ? (
@@ -69,7 +69,17 @@ export const ClubCard = ({ club }) => {
           component={motion.div}
           initial={{ y: -100 }}
           animate={{
-            y: hovered ? (longName ? -340 : -260) : 100,
+            y: hovered
+              ? longName
+                ? -380
+                : club.name === "ENI Praise Christ"
+                ? -320
+                : club.name === "Club d'Entraide de l'ENI"
+                ? -310
+                : club.name === "English Club based on Practice"
+                ? -310
+                : -280
+              : 100,
             transition: {
               stiffness: 20,
             },
@@ -93,7 +103,7 @@ export const ClubCard = ({ club }) => {
             onHoverStart={() => setHovered(true)}
             onHoverEnd={() => setHovered(false)}
             style={{
-              y: -200,
+              y: -220,
               zIndex: 2,
               position: "absolute",
               textAlign: "left",
@@ -104,7 +114,7 @@ export const ClubCard = ({ club }) => {
               {club.description}
             </Typography>
             <div style={{ position: "relative", top: 15 }}>
-              <Link to={club.link} className="link">
+              <Link to={`${club.link}#home`} className="link">
                 <Button variant="contained" color="secondary">
                   View more
                 </Button>

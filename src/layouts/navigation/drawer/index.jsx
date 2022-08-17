@@ -74,10 +74,10 @@ const NavDrawer = ({ sections }) => {
                 <Divider />
               </>
             ))}
-            <ListItemButton>
+           {/*  <ListItemButton>
               <ListItemText>Dark mode</ListItemText>
               <SwicthComponent />
-            </ListItemButton>
+            </ListItemButton> */}
             <ListItem>
               <ListItemText>Choose a language</ListItemText>
               <LangSelect />

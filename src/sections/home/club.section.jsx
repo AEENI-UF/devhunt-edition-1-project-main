@@ -46,7 +46,7 @@ export function ClubSection() {
       description: t("EPC_DESCRIPTION"),
       link: "/club/epc",
       cover: COVER_EPC,
-      height: 350,
+      height: 400,
     },
     {
       name: "Club d'Entraide de l'ENI",

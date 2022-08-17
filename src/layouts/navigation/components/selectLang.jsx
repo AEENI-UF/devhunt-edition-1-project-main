@@ -19,6 +19,7 @@ export default function LangSelect() {
       <Select
         labelId="select-language"
         id="select-language"
+        size="small"
         value={lang}
         onChange={(e) => {
           setlang(e.target.value);
