@@ -1,6 +1,6 @@
 * {
   /* border: 0.5px solid red; */
-  /* color: #2b0101; */
+  color: #0021f7;
   filter: brightness();
 }
 
@@ -11,39 +11,4 @@ body {
 
 .link {
   text-decoration: none;
-}
-
-#hero-element-design-1 {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  top: 25px;
-  left: 10px;
-
-  border-radius: 50%;
-  filter: blur(180px);
-}
-
-#hero-element-design-2 {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  top: 25px;
-  left: 10px;
-
-  border-radius: 50%;
-  filter: blur(180px);
-}
-
-#blur-radial {
-  position: absolute;
-  top: 70%;
-  left: -25%;
-  bottom: 0;
-  width: 150%;
-  height: 80vw;
-  background-color: rgba(247, 131, 49, 0.601);
-  border-radius: 50%;
-  filter: blur(50px);
-  z-index: 0;
 }
